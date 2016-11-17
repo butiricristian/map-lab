@@ -23,7 +23,7 @@ public class OpenRFile implements IStatement {
 
     @Override
     public PrgState execute(PrgState state) throws Exception {
-        MyIDictionary<Integer, MyITuple> fileTable = state.getFileTable();
+        MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable = state.getFileTable();
         for(Integer x : fileTable.keySet()) {
             if (fileTable.get(x).getFirst() == fileName) {
                 throw new Exception("File already exists");
@@ -31,6 +31,7 @@ public class OpenRFile implements IStatement {
         }
         BufferedReader fl = new BufferedReader(new FileReader(fileName));
         fileTable.put(prevKey, new MyTuple(fileName, fl));
+        state.getSymTable().put(varFileName, prevKey);
         prevKey++;
         return state;
     }

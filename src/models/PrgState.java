@@ -6,15 +6,17 @@ import models.ADTs.MyIStack;
 import models.ADTs.MyITuple;
 import models.statements.IStatement;
 
+import java.io.BufferedReader;
+
 public class PrgState {
 
     MyIStack<IStatement> exeStack;
     MyIDictionary<String, Integer> symTable;
     MyIList<Integer> out;
-    MyIDictionary<Integer, MyITuple> fileTable;
+    MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable;
     IStatement originalProg;
 
-    public PrgState(MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIDictionary<Integer, MyITuple> fTable, IStatement prg) throws Exception{
+    public PrgState(MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIDictionary<Integer, MyITuple<String, BufferedReader>> fTable, IStatement prg) throws Exception{
         exeStack = exe;
         symTable = sym;
         this.out = out;
@@ -40,7 +42,7 @@ public class PrgState {
         return out;
     }
 
-    public MyIDictionary<Integer, MyITuple> getFileTable(){
+    public MyIDictionary<Integer, MyITuple<String, BufferedReader>> getFileTable(){
         return fileTable;
     }
 
