@@ -37,6 +37,16 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     }
 
     @Override
+    public void remove(K key) throws ADTException{
+        try {
+            dict.remove(key);
+        }
+        catch(Exception e){
+            throw new ADTException("Key not found");
+        }
+    }
+
+    @Override
     public void update(K key, T value) throws ADTException {
         if(dict.containsKey(key)) {
             dict.replace(key, value);
