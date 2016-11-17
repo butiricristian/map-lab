@@ -1,0 +1,48 @@
+Exe Stack:
+[print(v), v=2]
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+null
+Exe Stack:
+[print(v)]
+Symbol Table:
+{v=2}
+Out:
+[]
+File Table:
+null
+Exe Stack:
+[]
+Symbol Table:
+{v=2}
+Out:
+[2]
+File Table:
+null
+Exe Stack:
+[print(v), v=2]
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+null
+Exe Stack:
+[print(v)]
+Symbol Table:
+{v=2}
+Out:
+[]
+File Table:
+null
+Exe Stack:
+[]
+Symbol Table:
+{v=2}
+Out:
+[2]
+File Table:
+null
