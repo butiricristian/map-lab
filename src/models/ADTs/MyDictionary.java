@@ -1,6 +1,7 @@
 package models.ADTs;
 import models.exceptions.ADTException;
 
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Set;
 
@@ -18,10 +19,10 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
 
     @Override
     public T get(K key) throws ADTException {
-        try{
+        if(dict.containsKey(key)){
             return dict.get(key);
         }
-        catch (NullPointerException e){
+        else{
             throw new ADTException("Key not found");
         }
     }
@@ -38,10 +39,10 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
 
     @Override
     public void remove(K key) throws ADTException{
-        try {
+        if(dict.containsKey(key)){
             dict.remove(key);
         }
-        catch(Exception e){
+        else{
             throw new ADTException("Key not found");
         }
     }
@@ -59,6 +60,11 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     @Override
     public Set<K> keySet(){
         return dict.keySet();
+    }
+
+    @Override
+    public Collection<T> values(){
+        return dict.values();
     }
 
     @Override

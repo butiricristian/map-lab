@@ -2,6 +2,7 @@ package models.ADTs;
 
 import models.exceptions.ADTException;
 
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Set;
 
@@ -12,5 +13,6 @@ public interface MyIDictionary<K, T> {
     void update(K key, T value) throws ADTException;
     T get(K key) throws ADTException;
     Set<K> keySet();
+    Collection<T> values();
     boolean isEmpty();
 }

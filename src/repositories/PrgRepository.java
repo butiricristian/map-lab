@@ -5,6 +5,7 @@ import models.ADTs.MyIList;
 import models.ADTs.MyIStack;
 import models.ADTs.MyITuple;
 import models.PrgState;
+import models.exceptions.FileException;
 import models.statements.IStatement;
 
 import java.io.*;
@@ -15,10 +16,12 @@ public class PrgRepository implements IPrgRepository{
 
     MyIList<PrgState> programs;
     String logFilePath;
+    boolean logFileOpened;
 
     public PrgRepository(MyIList<PrgState> progs, String filePath){
         programs = progs;
         logFilePath = filePath;
+        logFileOpened = false;
     }
 
     @Override
@@ -42,14 +45,22 @@ public class PrgRepository implements IPrgRepository{
     }
 
     @Override
-    public void logPrgStateExec(PrgState state){
+    public void logPrgStateExec(PrgState state) throws FileException {
         try {
-            PrintWriter log = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
+            PrintWriter log;
+            if(logFileOpened == true) {
+                log = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
+            }
+            else
+            {
+                log = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, false)));
+                logFileOpened = true;
+            }
 
             MyIStack<IStatement> exeStack = state.getExeStack();
             MyIDictionary<String, Integer> symTable = state.getSymTable();
             MyIList<Integer> out = state.getOut();
-            MyIDictionary<Integer, MyITuple> fileTable = state.getFileTable();
+            MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable = state.getFileTable();
 
             log.println("Exe Stack:");
             log.println(exeStack);
@@ -65,12 +76,17 @@ public class PrgRepository implements IPrgRepository{
 
             log.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new FileException("File not found");
         }
 
     }
 
     public MyIList<PrgState> getAll(){
         return programs;
+    }
+
+    @Override
+    public void setLogFilePath(String newPath){
+        logFilePath = newPath;
     }
 }

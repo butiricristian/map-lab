@@ -8,7 +8,7 @@ import repositories.IPrgRepository;
 
 public class Controller {
     IPrgRepository repo;
-    boolean flag = false;
+    boolean flag = true;
 
     public Controller(IPrgRepository repository){
         repo = repository;
@@ -28,14 +28,16 @@ public class Controller {
         }
     }
 
-    public void executeAllSteps() throws Exception{
+    public String executeAllSteps() throws Exception{
+        String result = "";
         PrgState prog = repo.getCrtProgram();
         MyIStack<IStatement> exeStack = prog.getExeStack();
         while(!exeStack.isEmpty()){
             try{
                 PrgState resState = executeOneStep(prog);
                 if(flag) {
-                    System.out.println(resState);
+                    // System.out.println(resState);
+                    result += resState.toString();
                 }
                 repo.logPrgStateExec(resState);
             }
@@ -43,8 +45,9 @@ public class Controller {
                 throw e;
             }
         }
-        System.out.println(prog.getOut());
-
+        // System.out.println(prog.getOut());
+        result += prog.getOut().toString();
+        return result;
     }
 
     public void addToRepo(PrgState pr){
@@ -63,5 +66,9 @@ public class Controller {
 
     public boolean getFlag(){
         return flag;
+    }
+
+    public void changeLogFile(String fileName){
+        repo.setLogFilePath(fileName);
     }
 }

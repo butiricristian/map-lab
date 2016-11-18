@@ -4,13 +4,11 @@ import models.ADTs.MyIDictionary;
 import models.ADTs.MyITuple;
 import models.ADTs.MyTuple;
 import models.PrgState;
+import models.exceptions.FileException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-/**
- * Created by xps on 17-Nov-16.
- */
 public class OpenRFile implements IStatement {
 
     String varFileName, fileName;
@@ -26,7 +24,7 @@ public class OpenRFile implements IStatement {
         MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable = state.getFileTable();
         for(Integer x : fileTable.keySet()) {
             if (fileTable.get(x).getFirst() == fileName) {
-                throw new Exception("File already exists");
+                throw new FileException("File already exists");
             }
         }
         BufferedReader fl = new BufferedReader(new FileReader(fileName));
@@ -34,5 +32,10 @@ public class OpenRFile implements IStatement {
         state.getSymTable().put(varFileName, prevKey);
         prevKey++;
         return state;
+    }
+
+    @Override
+    public String toString(){
+        return "openRFile(" + varFileName + ", " + fileName + ")";
     }
 }

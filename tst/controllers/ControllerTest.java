@@ -29,7 +29,7 @@ public class ControllerTest {
         IPrgRepository prgRepo1 = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         Controller ctrl1 = new Controller(prgRepo1);
         IStatement prg1 = new PrintStatement(new ConstExpression(2));
-        PrgState prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), prg1);
+        PrgState prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()), prg1);
         prgRepo1.addProgram(prgState1);
         ctrl1.executeOneStep(prgState1);
         assertEquals(prgState1.getOut().get(0), new Integer(2));
@@ -41,7 +41,7 @@ public class ControllerTest {
         IPrgRepository prgRepo1 = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         Controller ctrl1 = new Controller(prgRepo1);
         IStatement prg1 = new CompoundStatement(new AssignStatement("v", new ConstExpression(2)), new PrintStatement(new VarExpression("v")));
-        PrgState prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), prg1);
+        PrgState prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()), prg1);
         prgRepo1.addProgram(prgState1);
         ctrl1.executeAllSteps();
         assertEquals(prgState1.getExeStack().isEmpty(), true);

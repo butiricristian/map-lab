@@ -20,7 +20,7 @@ public class CompoundStatementTest {
     @Test
     public void execute() throws Exception {
         CompoundStatement stmt1 = new CompoundStatement(new PrintStatement(new ConstExpression(2)), new PrintStatement(new ConstExpression(10)));
-        PrgState prg1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), stmt1);
+        PrgState prg1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()),stmt1);
         while(!prg1.getExeStack().isEmpty()) {
             IStatement crtStmt = prg1.getExeStack().pop();
             crtStmt.execute(prg1);

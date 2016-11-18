@@ -3,6 +3,7 @@ package models.statements;
 import models.ADTs.MyIDictionary;
 import models.ADTs.MyITuple;
 import models.PrgState;
+import models.expressions.Expression;
 
 import java.io.BufferedReader;
 
@@ -10,9 +11,9 @@ import java.io.BufferedReader;
  * Created by xps on 17-Nov-16.
  */
 public class CloseRFile implements IStatement{
-    String varFile;
+    Expression varFile;
 
-    public CloseRFile(String var_file_id){
+    public CloseRFile(Expression var_file_id){
         varFile = var_file_id;
     }
 
@@ -20,10 +21,15 @@ public class CloseRFile implements IStatement{
     public PrgState execute(PrgState state) throws Exception {
         MyIDictionary<String, Integer> symTable = state.getSymTable();
         MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable = state.getFileTable();
-        Integer file_desc = symTable.get(varFile);
+        Integer file_desc = varFile.eval(symTable);
         BufferedReader file = fileTable.get(file_desc).getSecond();
         file.close();
         fileTable.remove(file_desc);
         return state;
+    }
+
+    @Override
+    public String toString(){
+        return "closeRFile(" + varFile + ")";
     }
 }
