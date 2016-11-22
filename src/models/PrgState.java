@@ -1,9 +1,6 @@
 package models;
 
-import models.ADTs.MyIDictionary;
-import models.ADTs.MyIList;
-import models.ADTs.MyIStack;
-import models.ADTs.MyITuple;
+import models.ADTs.*;
 import models.statements.IStatement;
 
 import java.io.BufferedReader;
@@ -13,10 +10,10 @@ public class PrgState {
     MyIStack<IStatement> exeStack;
     MyIDictionary<String, Integer> symTable;
     MyIList<Integer> out;
-    MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable;
+    MyIFileTable fileTable;
     IStatement originalProg;
 
-    public PrgState(MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIDictionary<Integer, MyITuple<String, BufferedReader>> fTable, IStatement prg) throws Exception{
+    public PrgState(MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIFileTable fTable, IStatement prg) throws Exception{
         exeStack = exe;
         symTable = sym;
         this.out = out;
@@ -42,7 +39,7 @@ public class PrgState {
         return out;
     }
 
-    public MyIDictionary<Integer, MyITuple<String, BufferedReader>> getFileTable(){
+    public MyIFileTable getFileTable(){
         return fileTable;
     }
 

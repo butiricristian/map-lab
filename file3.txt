@@ -29,7 +29,7 @@ Symbol Table:
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [(print(var_c);(If(var_c) Then
 	(readFile(var_f, var_c);print(var_c))
@@ -44,7 +44,7 @@ Symbol Table:
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [(print(var_c);(If(var_c) Then
 	(readFile(var_f, var_c);print(var_c))
@@ -59,7 +59,7 @@ Symbol Table:
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [(If(var_c) Then
 	(readFile(var_f, var_c);print(var_c))
@@ -73,7 +73,7 @@ Symbol Table:
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [(If(var_c) Then
 	(readFile(var_f, var_c);print(var_c))
@@ -87,7 +87,7 @@ Symbol Table:
 Out:
 [15]
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [closeRFile(var_f), If(var_c) Then
 	(readFile(var_f, var_c);print(var_c))
@@ -100,7 +100,7 @@ Symbol Table:
 Out:
 [15]
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [closeRFile(var_f), (readFile(var_f, var_c);print(var_c))
 ]
@@ -109,7 +109,7 @@ Symbol Table:
 Out:
 [15]
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [closeRFile(var_f), print(var_c), readFile(var_f, var_c)]
 Symbol Table:
@@ -117,7 +117,7 @@ Symbol Table:
 Out:
 [15]
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [closeRFile(var_f), print(var_c)]
 Symbol Table:
@@ -125,7 +125,7 @@ Symbol Table:
 Out:
 [15]
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 [closeRFile(var_f)]
 Symbol Table:
@@ -133,7 +133,7 @@ Symbol Table:
 Out:
 [15, 50]
 File Table:
-{1=(test.in, java.io.BufferedReader@45ee12a7)}
+{1=(test.in, java.io.BufferedReader@330bedb4)}
 Exe Stack:
 []
 Symbol Table:

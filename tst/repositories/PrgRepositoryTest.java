@@ -1,6 +1,7 @@
 package repositories;
 
 import models.ADTs.MyDictionary;
+import models.ADTs.MyFileTable;
 import models.ADTs.MyList;
 import models.ADTs.MyStack;
 import models.PrgState;
@@ -13,6 +14,7 @@ import models.statements.PrintStatement;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Stack;
 
@@ -25,7 +27,7 @@ public class PrgRepositoryTest {
     @Test
     public void addProgram() throws Exception {
         IStatement prg1 = new CompoundStatement(new AssignStatement("a", new ConstExpression(2)), new PrintStatement(new VarExpression("a")));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()), prg1);
+        PrgState prg = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()), prg1);
         PrgRepository repo = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         repo.addProgram(prg);
         assertEquals( repo.getAll().isEmpty(), false);
@@ -34,7 +36,7 @@ public class PrgRepositoryTest {
     @Test
     public void getCrtProgram() throws Exception {
         IStatement prg1 = new CompoundStatement(new AssignStatement("a", new ConstExpression(2)), new PrintStatement(new VarExpression("a")));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()), prg1);
+        PrgState prg = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()), prg1);
         PrgRepository repo = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         repo.addProgram(prg);
         assertNotEquals( repo.getCrtProgram(), null);

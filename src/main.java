@@ -14,6 +14,7 @@ import views.Menu;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Stack;
 
@@ -24,7 +25,7 @@ public class main {
         IStatement prg1 = new CompoundStatement(new AssignStatement("v", new ConstExpression(2)), new PrintStatement(new VarExpression("v")));
         PrgState prgState1 = null;
         try {
-            prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()),  prg1);
+            prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()),  prg1);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -48,7 +49,7 @@ public class main {
                 new PrintStatement(new VarExpression("b")));
         PrgState prgState2 = null;
         try {
-            prgState2 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()),prg2);
+            prgState2 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()),prg2);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -78,7 +79,7 @@ public class main {
         );
         PrgState prgState3 = null;
         try {
-            prgState3 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()), prg3);
+            prgState3 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()), prg3);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -108,7 +109,7 @@ public class main {
         );
         PrgState prgState4 = null;
         try {
-            prgState4 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyDictionary<>(new Hashtable<>()), prg4);
+            prgState4 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()), prg4);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

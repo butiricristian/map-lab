@@ -1,6 +1,7 @@
 package models.statements;
 
 import models.ADTs.MyIDictionary;
+import models.ADTs.MyIFileTable;
 import models.ADTs.MyITuple;
 import models.PrgState;
 import models.expressions.Expression;
@@ -24,7 +25,7 @@ public class ReadFile implements IStatement{
     @Override
     public PrgState execute(PrgState state) throws Exception {
         MyIDictionary<String, Integer> symTable = state.getSymTable();
-        MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable = state.getFileTable();
+        MyIFileTable fileTable = state.getFileTable();
         Integer file_desc = varFile.eval(symTable);
         BufferedReader file = fileTable.get(file_desc).getSecond();
         String line = file.readLine();

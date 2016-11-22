@@ -1,9 +1,6 @@
 package repositories;
 
-import models.ADTs.MyIDictionary;
-import models.ADTs.MyIList;
-import models.ADTs.MyIStack;
-import models.ADTs.MyITuple;
+import models.ADTs.*;
 import models.PrgState;
 import models.exceptions.FileException;
 import models.statements.IStatement;
@@ -60,7 +57,7 @@ public class PrgRepository implements IPrgRepository{
             MyIStack<IStatement> exeStack = state.getExeStack();
             MyIDictionary<String, Integer> symTable = state.getSymTable();
             MyIList<Integer> out = state.getOut();
-            MyIDictionary<Integer, MyITuple<String, BufferedReader>> fileTable = state.getFileTable();
+            MyIFileTable fileTable = state.getFileTable();
 
             log.println("Exe Stack:");
             log.println(exeStack);
