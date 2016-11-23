@@ -26,7 +26,12 @@ public class PrgStateTest {
     @Before
     public void setUp() throws Exception {
         IStatement prg1 = new CompoundStatement(new AssignStatement("a", new ConstExpression(2)), new PrintStatement(new VarExpression("a")));
-        prg = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()), prg1);
+        prg = new PrgState(new MyStack<>(new Stack<>()),
+                new MyDictionary<>(new Hashtable<>()),
+                new MyList<>(new ArrayList<>()),
+                new MyFileTable(new HashMap<>()),
+                new MyHeap(new HashMap<>()),
+                prg1);
     }
 
     @Test

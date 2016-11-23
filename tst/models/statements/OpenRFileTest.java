@@ -19,7 +19,12 @@ public class OpenRFileTest {
     @Test
     public void execute() throws Exception {
         IStatement open = new OpenRFile("var_f", "test.in");
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()), open);
+        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+                new MyDictionary<>(new Hashtable<>()),
+                new MyList<>(new ArrayList<>()),
+                new MyFileTable(new HashMap<>()),
+                new MyHeap(new HashMap<>()),
+                open);
         open.execute(prg);
         try {
             prg.getFileTable().get(1);
@@ -31,7 +36,12 @@ public class OpenRFileTest {
 
         try {
             IStatement open2 = new CompoundStatement(new OpenRFile("var_f", "test.in"), new OpenRFile("var_j", "test.in"));
-            PrgState prg2 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), new MyFileTable(new HashMap<>()), open2);
+            PrgState prg2 = new PrgState(new MyStack<>(new Stack<>()),
+                    new MyDictionary<>(new Hashtable<>()),
+                    new MyList<>(new ArrayList<>()),
+                    new MyFileTable(new HashMap<>()),
+                    new MyHeap(new HashMap<>()),
+                    open2);
             while(!prg2.getExeStack().isEmpty()) {
                 IStatement res = prg2.getExeStack().pop();
                 res.execute(prg2);

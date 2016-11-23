@@ -11,13 +11,16 @@ public class PrgState {
     MyIDictionary<String, Integer> symTable;
     MyIList<Integer> out;
     MyIFileTable fileTable;
+    MyIHeap heap;
     IStatement originalProg;
 
-    public PrgState(MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIFileTable fTable, IStatement prg) throws Exception{
+
+    public PrgState(MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIFileTable fTable, MyIHeap heap, IStatement prg) throws Exception{
         exeStack = exe;
         symTable = sym;
         this.out = out;
         fileTable = fTable;
+        this.heap = heap;
         originalProg = prg;
         try {
             exe.push(prg);
@@ -56,6 +59,7 @@ public class PrgState {
         return "Exe Stack: " + exeStack.toString() + "\n" +
                 "Symbol Table: " + symTable.toString() + "\n" +
                 "Out: " + out.toString() + "\n" +
-                "File Table: " + fileTable.toString() + "\n";
+                "File Table: " + fileTable.toString() + "\n" +
+                "Heap:  " + heap.toString() + "\n";
     }
 }
