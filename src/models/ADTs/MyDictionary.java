@@ -63,6 +63,11 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     }
 
     @Override
+    public boolean contains(K key) {
+        return dict.containsKey(key);
+    }
+
+    @Override
     public Collection<T> values(){
         return dict.values();
     }

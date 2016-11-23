@@ -13,6 +13,7 @@ public interface MyIDictionary<K, T> {
     void update(K key, T value) throws ADTException;
     T get(K key) throws ADTException;
     Set<K> keySet();
+    boolean contains(K key);
     Collection<T> values();
     boolean isEmpty();
 }

@@ -46,6 +46,10 @@ public class PrgState {
         return fileTable;
     }
 
+    public MyIHeap getHeap(){
+        return heap;
+    }
+
 
     //setters
     public void setExeStack(MyIStack<IStatement> exeStack){ this.exeStack = exeStack; }

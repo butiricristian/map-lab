@@ -1,6 +1,7 @@
 package models.expressions;
 
 import models.ADTs.MyIDictionary;
+import models.ADTs.MyIHeap;
 
 public class ConstExpression extends Expression {
     int number;
@@ -10,7 +11,7 @@ public class ConstExpression extends Expression {
     }
 
     @Override
-    public Integer eval(MyIDictionary<String, Integer> symTable) throws Exception {
+    public Integer eval(MyIDictionary<String, Integer> symTable, MyIHeap heap) throws Exception {
         return number;
     }
 

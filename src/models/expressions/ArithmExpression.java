@@ -1,6 +1,7 @@
 package models.expressions;
 
 import models.ADTs.MyIDictionary;
+import models.ADTs.MyIHeap;
 import models.exceptions.DivBy0Exception;
 import models.exceptions.InvalidOperationException;
 
@@ -17,18 +18,18 @@ public class ArithmExpression extends Expression {
     }
 
     @Override
-    public Integer eval(MyIDictionary<String, Integer> symTable) throws Exception {
+    public Integer eval(MyIDictionary<String, Integer> symTable, MyIHeap heap) throws Exception {
         switch (operation) {
             case "+":
-                return term1.eval(symTable) + term2.eval(symTable);
+                return term1.eval(symTable, heap) + term2.eval(symTable, heap);
             case "-":
-                return term1.eval(symTable) - term2.eval(symTable);
+                return term1.eval(symTable, heap) - term2.eval(symTable, heap);
             case "*":
-                return term1.eval(symTable) * term2.eval(symTable);
+                return term1.eval(symTable, heap) * term2.eval(symTable, heap);
             case "/":
-                if(term2.eval(symTable) == 0)
+                if(term2.eval(symTable, heap) == 0)
                     throw new DivBy0Exception("Division by 0 error");
-                return term1.eval(symTable) / term2.eval(symTable);
+                return term1.eval(symTable, heap) / term2.eval(symTable, heap);
             default:
                 throw new InvalidOperationException("Invalid Operation!");
         }

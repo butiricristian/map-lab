@@ -15,9 +15,10 @@ public class MyHeap implements MyIHeap {
     }
 
     @Override
-    public void add(Integer value) {
+    public Integer add(Integer value) {
         heap.put(prevAddr, value);
         prevAddr++;
+        return (prevAddr-1);
     }
 
     @Override
@@ -38,6 +39,21 @@ public class MyHeap implements MyIHeap {
         else{
             throw new HeapException("Address not found");
         }
+    }
+
+    @Override
+    public void update(Integer address, Integer value) throws HeapException {
+        if(heap.containsKey(address)){
+            heap.replace(address, value);
+        }
+        else{
+            throw new HeapException("Address not found");
+        }
+    }
+
+    @Override
+    public boolean contains(Integer address){
+        return heap.containsKey(address);
     }
 
     @Override
