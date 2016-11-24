@@ -6,6 +6,12 @@ import models.PrgState;
 import models.statements.IStatement;
 import repositories.IPrgRepository;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class Controller {
     IPrgRepository repo;
     boolean flag = true;
@@ -23,7 +29,7 @@ public class Controller {
         try{
             return stmt.execute(state);
         }
-        catch (Exception e){
+        catch (Exception e) {
             throw e;
         }
     }
@@ -34,12 +40,14 @@ public class Controller {
         MyIStack<IStatement> exeStack = prog.getExeStack();
         while(!exeStack.isEmpty()){
             try{
-                PrgState resState = executeOneStep(prog);
+                executeOneStep(prog);
                 if(flag) {
                     // System.out.println(resState);
-                    result += resState.toString();
+                    result += prog.toString() + "\n";
                 }
-                repo.logPrgStateExec(resState);
+                prog.getHeap().setContent((HashMap)conservativeGarbageCollector(prog.getSymTable().getContent().values(),
+                        prog.getHeap().getContent()));
+                repo.logPrgStateExec(prog);
             }
             catch (Exception e){
                 throw e;
@@ -58,6 +66,12 @@ public class Controller {
         if(!repo.isEmpty()){
             repo.removeAll();
         }
+    }
+
+    public Map<Integer, Integer> conservativeGarbageCollector(Collection<Integer> symTableValues, Map<Integer, Integer> heap){
+        return heap.entrySet().stream().
+                filter(e -> symTableValues.contains(e.getKey())).
+                collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
     public void setFlag(boolean cond){

@@ -3,6 +3,7 @@ package models.ADTs;
 import models.exceptions.HeapException;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class MyHeap implements MyIHeap {
 
@@ -49,6 +50,16 @@ public class MyHeap implements MyIHeap {
         else{
             throw new HeapException("Address not found");
         }
+    }
+
+    @Override
+    public void setContent(HashMap<Integer, Integer> newHeap) {
+        heap = newHeap;
+    }
+
+    @Override
+    public HashMap<Integer, Integer> getContent() {
+        return heap;
     }
 
     @Override

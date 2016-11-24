@@ -15,5 +15,6 @@ public interface MyIDictionary<K, T> {
     Set<K> keySet();
     boolean contains(K key);
     Collection<T> values();
+    Hashtable<K, T> getContent();
     boolean isEmpty();
 }

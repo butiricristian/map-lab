@@ -20,4 +20,9 @@ public class ReadHeap extends Expression {
         }
         return heap.get(symTable.get(varName));
     }
+
+    @Override
+    public String toString(){
+        return "readHeap(" + varName + ")";
+    }
 }

@@ -18,7 +18,7 @@ public class HeapNew implements IStatement {
     @Override
     public PrgState execute(PrgState state) throws Exception {
         MyIDictionary<String, Integer> symTbl = state.getSymTable();
-        Integer addr = state.getHeap().add(expr.eval(symTbl));
+        Integer addr = state.getHeap().add(expr.eval(symTbl, state.getHeap()));
         if(!symTbl.contains(var_name)) {
             symTbl.put(var_name, addr);
         }
@@ -30,6 +30,6 @@ public class HeapNew implements IStatement {
 
     @Override
     public String toString(){
-        return "new(" + var_name + ", " + expr.toString();
+        return "new(" + var_name + ", " + expr.toString() + ")";
     }
 }

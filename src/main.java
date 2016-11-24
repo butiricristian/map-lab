@@ -3,6 +3,7 @@ import models.ADTs.*;
 import models.PrgState;
 import models.expressions.ArithmExpression;
 import models.expressions.ConstExpression;
+import models.expressions.ReadHeap;
 import models.expressions.VarExpression;
 import models.statements.*;
 import repositories.IPrgRepository;
@@ -20,6 +21,7 @@ import java.util.Stack;
 
 public class main {
     public static void main(String[] args){
+        //PROGRAM 1
         IPrgRepository prgRepo1 = new PrgRepository(new MyList<>(new ArrayList<>()), "file1.txt");
         Controller ctrl1 = new Controller(prgRepo1);
         IStatement prg1 = new CompoundStatement(new AssignStatement("v", new ConstExpression(2)), new PrintStatement(new VarExpression("v")));
@@ -37,6 +39,9 @@ public class main {
         ctrl1.clearRepo();
         ctrl1.addToRepo(prgState1);
 
+
+
+        //PROGRAM 2
         IPrgRepository prgRepo2 = new PrgRepository(new MyList<>(new ArrayList<>()), "file2.txt");
         Controller ctrl2 = new Controller(prgRepo2);
         IStatement prg2 = new CompoundStatement(
@@ -66,6 +71,10 @@ public class main {
         ctrl2.clearRepo();
         ctrl2.addToRepo(prgState2);
 
+
+
+
+        //PROGRAM 3
         IPrgRepository prgRepo3 = new PrgRepository(new MyList<>(new ArrayList<>()), "file3.txt");
         Controller ctrl3 = new Controller(prgRepo3);
         IStatement prg3 = new CompoundStatement(
@@ -101,6 +110,10 @@ public class main {
         ctrl3.clearRepo();
         ctrl3.addToRepo(prgState3);
 
+
+
+
+        //PROGRAM 4
         IPrgRepository prgRepo4 = new PrgRepository(new MyList<>(new ArrayList<>()), "file4.txt");
         Controller ctrl4 = new Controller(prgRepo4);
         IStatement prg4 = new CompoundStatement(
@@ -135,16 +148,61 @@ public class main {
         ctrl4.clearRepo();
         ctrl4.addToRepo(prgState4);
 
+
+
+
+        //PROGRAM 5
+        IPrgRepository prgRepo5 = new PrgRepository(new MyList<>(new ArrayList<>()), "file5.txt");
+        Controller ctrl5 = new Controller(prgRepo5);
+        IStatement prg5 = new CompoundStatement(
+                new AssignStatement("v", new ConstExpression(10)),
+                new CompoundStatement(
+                        new HeapNew("v", new ConstExpression(20)),
+                        new CompoundStatement(
+                                new HeapNew("a", new ConstExpression(22)),
+                                new CompoundStatement(
+                                        new WriteHeap("a", new ConstExpression(30)),
+                                        new CompoundStatement(
+                                             new PrintStatement(new VarExpression("a")),
+                                             new CompoundStatement(
+                                                     new PrintStatement(new ReadHeap("a")),
+                                                     new AssignStatement("a", new ConstExpression(0))
+                                             )
+                                        )
+                                )
+                        )
+                )
+        );
+        PrgState prgState5 = null;
+        try {
+            prgState5 = new PrgState(new MyStack<>(new Stack<>()),
+                    new MyDictionary<>(new Hashtable<>()),
+                    new MyList<>(new ArrayList<>()),
+                    new MyFileTable(new HashMap<>()),
+                    new MyHeap(new HashMap<>()), prg5);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        ctrl5.clearRepo();
+        ctrl5.addToRepo(prgState5);
+
+
+
+
+
+
         Menu m = new Menu();
         m.addCommand(new ExitCommand("0", "Press 0 to exit"));
         m.addCommand(new RunExample("1", "Press 1 to run program 1", ctrl1));
         m.addCommand(new RunExample("2", "Press 2 to run program 2", ctrl2));
         m.addCommand(new RunExample("3", "Press 3 to run program 3", ctrl3));
         m.addCommand(new RunExample("4", "Press 4 to run program 4", ctrl4));
+        m.addCommand(new RunExample("5", "Press 5 to run program 5", ctrl5));
         m.addCommand(new ChangeLogFilePath("C1", "Type C1 to change the log path for program 1", ctrl1));
         m.addCommand(new ChangeLogFilePath("C2", "Type C2 to change the log path for program 2", ctrl2));
         m.addCommand(new ChangeLogFilePath("C3", "Type C3 to change the log path for program 3", ctrl3));
         m.addCommand(new ChangeLogFilePath("C4", "Type C4 to change the log path for program 4", ctrl4));
+        m.addCommand(new ChangeLogFilePath("C5", "Type C5 to change the log path for program 5", ctrl5));
         m.show();
     }
 }

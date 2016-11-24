@@ -1,0 +1,117 @@
+Exe Stack:
+new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0, v=10
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
+Symbol Table:
+{v=10}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0, new(v, 20)
+Symbol Table:
+{v=10}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
+Symbol Table:
+{v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+writeHeap(a, 30);print(a);print(readHeap(a));a=0, new(a, 22)
+Symbol Table:
+{v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+writeHeap(a, 30);print(a);print(readHeap(a));a=0
+Symbol Table:
+{a=2, v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(a);print(readHeap(a));a=0, writeHeap(a, 30)
+Symbol Table:
+{a=2, v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(a);print(readHeap(a));a=0
+Symbol Table:
+{a=2, v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(readHeap(a));a=0, print(a)
+Symbol Table:
+{a=2, v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(readHeap(a));a=0
+Symbol Table:
+{a=2, v=1}
+Out:
+[2]
+File Table:
+{}
+
+Exe Stack:
+a=0, print(readHeap(a))
+Symbol Table:
+{a=2, v=1}
+Out:
+[2]
+File Table:
+{}
+
+Exe Stack:
+a=0
+Symbol Table:
+{a=2, v=1}
+Out:
+[2, 30]
+File Table:
+{}
+
+Exe Stack:
+
+Symbol Table:
+{a=0, v=1}
+Out:
+[2, 30]
+File Table:
+{}
+

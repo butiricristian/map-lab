@@ -23,6 +23,6 @@ public class CompoundStatement implements IStatement {
 
     @Override
     public String toString(){
-        return "(" + stmt1.toString() + ";" + stmt2.toString() + ")" + "\n";
+        return stmt1.toString() + ";" + stmt2.toString();
     }
 }

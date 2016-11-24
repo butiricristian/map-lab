@@ -23,4 +23,9 @@ public class WriteHeap implements IStatement {
         heap.update(address, expr.eval(symTable, heap));
         return state;
     }
+
+    @Override
+    public String toString(){
+        return "writeHeap(" + varName + ", " + expr.toString() + ")";
+    }
 }

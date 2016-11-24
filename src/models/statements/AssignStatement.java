@@ -21,7 +21,7 @@ public class AssignStatement implements IStatement{
         MyIDictionary<String, Integer> symTable = state.getSymTable();
         Integer eval = null;
         try {
-            eval = exp.eval(symTable);
+            eval = exp.eval(symTable, state.getHeap());
         } catch (VarNotDefinedException e) {
             throw e;
         }

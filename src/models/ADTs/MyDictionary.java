@@ -73,6 +73,11 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     }
 
     @Override
+    public Hashtable<K, T> getContent() {
+        return dict;
+    }
+
+    @Override
     public String toString() {
         return dict.toString();
     }

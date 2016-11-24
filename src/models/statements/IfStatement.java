@@ -25,7 +25,7 @@ public class IfStatement implements IStatement{
         MyIDictionary<String, Integer> symTable = state.getSymTable();
         Integer eval = null;
         try {
-            eval = exp.eval(symTable);
+            eval = exp.eval(symTable, state.getHeap());
         } catch (VarNotDefinedException e) {
             throw e;
         }
@@ -43,7 +43,7 @@ public class IfStatement implements IStatement{
 
     @Override
     public String toString(){
-        return "If(" + exp.toString() + ") Then\n\t" + thenStmt.toString() +
-                "\n" + "Else\n\t" + elseStmt.toString() + "\n";
+        return "If(" + exp.toString() + ") Then: " + thenStmt.toString() +
+                "Else" + elseStmt.toString();
     }
 }

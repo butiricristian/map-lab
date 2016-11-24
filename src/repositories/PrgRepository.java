@@ -60,7 +60,7 @@ public class PrgRepository implements IPrgRepository{
             MyIFileTable fileTable = state.getFileTable();
 
             log.println("Exe Stack:");
-            log.println(exeStack);
+            log.println(exeStack.toString().replace("[", "").replace("]", ""));
 
             log.println("Symbol Table:");
             log.println(symTable);
@@ -70,6 +70,8 @@ public class PrgRepository implements IPrgRepository{
 
             log.println("File Table:");
             log.println(fileTable);
+
+            log.println();
 
             log.close();
         } catch (IOException e) {

@@ -26,7 +26,7 @@ public class ReadFile implements IStatement{
     public PrgState execute(PrgState state) throws Exception {
         MyIDictionary<String, Integer> symTable = state.getSymTable();
         MyIFileTable fileTable = state.getFileTable();
-        Integer file_desc = varFile.eval(symTable);
+        Integer file_desc = varFile.eval(symTable, state.getHeap());
         BufferedReader file = fileTable.get(file_desc).getSecond();
         String line = file.readLine();
         if(line == null){

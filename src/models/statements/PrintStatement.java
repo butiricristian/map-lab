@@ -18,7 +18,7 @@ public class PrintStatement implements IStatement {
         MyIList<Integer> out = state.getOut();
         Integer eval = null;
         try {
-            eval = exp.eval(symTable);
+            eval = exp.eval(symTable, state.getHeap());
         } catch (Exception e) {
             throw e;
         }
