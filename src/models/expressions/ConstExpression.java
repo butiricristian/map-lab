@@ -3,7 +3,9 @@ package models.expressions;
 import models.ADTs.MyIDictionary;
 import models.ADTs.MyIHeap;
 
-public class ConstExpression extends Expression {
+import java.io.Serializable;
+
+public class ConstExpression extends Expression implements Serializable{
     int number;
 
     public ConstExpression(int number){

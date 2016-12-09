@@ -2,9 +2,9 @@ package models.statements;
 
 import models.ADTs.MyIStack;
 import models.PrgState;
-import models.exceptions.ADTException;
+import java.io.Serializable;
 
-public class CompoundStatement implements IStatement {
+public class CompoundStatement implements IStatement, Serializable {
 
     IStatement stmt1, stmt2;
 
@@ -18,7 +18,7 @@ public class CompoundStatement implements IStatement {
         MyIStack<IStatement> exeStack = state.getExeStack();
         exeStack.push(stmt2);
         exeStack.push(stmt1);
-        return state;
+        return null;
     }
 
     @Override

@@ -9,8 +9,9 @@ import models.exceptions.FileException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 
-public class OpenRFile implements IStatement {
+public class OpenRFile implements IStatement, Serializable {
 
     String varFileName, fileName;
 
@@ -31,7 +32,7 @@ public class OpenRFile implements IStatement {
         Integer prevKey = fileTable.add(new MyTuple(fileName, fl));
         state.getSymTable().put(varFileName, prevKey);
         prevKey++;
-        return state;
+        return null;
     }
 
     @Override

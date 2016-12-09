@@ -4,7 +4,9 @@ import models.ADTs.MyIDictionary;
 import models.ADTs.MyIHeap;
 import models.exceptions.VarNotDefinedException;
 
-public class VarExpression extends Expression {
+import java.io.Serializable;
+
+public class VarExpression extends Expression implements Serializable {
     String varName;
 
     public VarExpression(String var){

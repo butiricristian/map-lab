@@ -5,7 +5,9 @@ import models.ADTs.MyIHeap;
 import models.exceptions.DivBy0Exception;
 import models.exceptions.InvalidOperationException;
 
-public class ArithmExpression extends Expression {
+import java.io.Serializable;
+
+public class ArithmExpression extends Expression implements Serializable {
 
     String operation;
     Expression term1;

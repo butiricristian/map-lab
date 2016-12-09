@@ -3,9 +3,9 @@ package models;
 import models.ADTs.*;
 import models.statements.IStatement;
 
-import java.io.BufferedReader;
+import java.io.*;
 
-public class PrgState {
+public class PrgState implements Serializable{
 
     MyIStack<IStatement> exeStack;
     MyIDictionary<String, Integer> symTable;
@@ -57,6 +57,14 @@ public class PrgState {
     public void setSymTable(MyIDictionary<String, Integer> symTable){ this.symTable = symTable; }
 
     public void setOut(MyIList<Integer> out){ this.out = out; }
+
+    public void setFileTable(MyIFileTable fTable){
+        this.fileTable = fTable;
+    }
+
+    public void setHeap(MyIHeap heap){
+        this.heap = heap;
+    }
 
     @Override
     public String toString(){

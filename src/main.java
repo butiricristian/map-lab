@@ -1,16 +1,11 @@
 import controllers.Controller;
 import models.ADTs.*;
 import models.PrgState;
-import models.expressions.ArithmExpression;
-import models.expressions.ConstExpression;
-import models.expressions.ReadHeap;
-import models.expressions.VarExpression;
+import models.expressions.*;
 import models.statements.*;
 import repositories.IPrgRepository;
 import repositories.PrgRepository;
-import views.Commands.ChangeLogFilePath;
-import views.Commands.ExitCommand;
-import views.Commands.RunExample;
+import views.Commands.*;
 import views.Menu;
 
 import java.io.BufferedReader;
@@ -187,6 +182,32 @@ public class main {
         ctrl5.addToRepo(prgState5);
 
 
+        //PROGRAM 6
+        IPrgRepository prgRepo6 = new PrgRepository(new MyList<>(new ArrayList<>()), "file6.txt");
+        Controller ctrl6 = new Controller(prgRepo6);
+        IStatement prg6 = new CompoundStatement(
+                new AssignStatement("v", new ConstExpression(0)),
+                new CompoundStatement(
+                    new WhileStatement(new BooleanExpression("<", new VarExpression("v"), new ConstExpression(5)),
+                            new AssignStatement("v",
+                                new ArithmExpression("+", new VarExpression("v"), new ConstExpression(1))
+                            )
+                    ),
+                    new PrintStatement(new VarExpression("v"))
+                )
+        );
+        PrgState prgState6 = null;
+        try {
+            prgState6 = new PrgState(new MyStack<>(new Stack<>()),
+                    new MyDictionary<>(new Hashtable<>()),
+                    new MyList<>(new ArrayList<>()),
+                    new MyFileTable(new HashMap<>()),
+                    new MyHeap(new HashMap<>()), prg6);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        ctrl6.clearRepo();
+        ctrl6.addToRepo(prgState6);
 
 
 
@@ -198,11 +219,26 @@ public class main {
         m.addCommand(new RunExample("3", "Press 3 to run program 3", ctrl3));
         m.addCommand(new RunExample("4", "Press 4 to run program 4", ctrl4));
         m.addCommand(new RunExample("5", "Press 5 to run program 5", ctrl5));
+        m.addCommand(new RunExample("6", "Press 6 to run program 6", ctrl6));
         m.addCommand(new ChangeLogFilePath("C1", "Type C1 to change the log path for program 1", ctrl1));
         m.addCommand(new ChangeLogFilePath("C2", "Type C2 to change the log path for program 2", ctrl2));
         m.addCommand(new ChangeLogFilePath("C3", "Type C3 to change the log path for program 3", ctrl3));
         m.addCommand(new ChangeLogFilePath("C4", "Type C4 to change the log path for program 4", ctrl4));
         m.addCommand(new ChangeLogFilePath("C5", "Type C5 to change the log path for program 5", ctrl5));
+        m.addCommand(new ChangeLogFilePath("C6", "Type C6 to change the log path for program 6", ctrl6));
+//        m.addCommand(new SerializeCommand("S1", "Press S1 to serialize program 1", ctrl1));
+//        m.addCommand(new DeserializeCommand("D1", "Press D1 to deserialize program 1", ctrl1));
+//        m.addCommand(new SerializeCommand("S2", "Press S2 to serialize program 2", ctrl2));
+//        m.addCommand(new DeserializeCommand("D2", "Press D2 to deserialize program 2", ctrl2));
+//        m.addCommand(new SerializeCommand("S3", "Press S3 to serialize program 3", ctrl3));
+//        m.addCommand(new DeserializeCommand("D3", "Press D3 to deserialize program 3", ctrl3));
+//        m.addCommand(new SerializeCommand("S4", "Press S4 to serialize program 4", ctrl4));
+//        m.addCommand(new DeserializeCommand("D4", "Press D4 to deserialize program 4", ctrl4));
+//        m.addCommand(new SerializeCommand("S5", "Press S5 to serialize program 5", ctrl5));
+//        m.addCommand(new DeserializeCommand("D5", "Press D5 to deserialize program 5", ctrl5));
+//        m.addCommand(new SerializeCommand("S6", "Press S6 to serialize program 6", ctrl6));
+//        m.addCommand(new DeserializeCommand("D6", "Press D6 to deserialize program 6", ctrl6));
+
         m.show();
     }
 }

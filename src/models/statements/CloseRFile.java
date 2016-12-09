@@ -7,11 +7,12 @@ import models.PrgState;
 import models.expressions.Expression;
 
 import java.io.BufferedReader;
+import java.io.Serializable;
 
 /**
  * Created by xps on 17-Nov-16.
  */
-public class CloseRFile implements IStatement{
+public class CloseRFile implements IStatement, Serializable{
     Expression varFile;
 
     public CloseRFile(Expression var_file_id){
@@ -26,7 +27,7 @@ public class CloseRFile implements IStatement{
         BufferedReader file = fileTable.get(file_desc).getSecond();
         file.close();
         fileTable.remove(file_desc);
-        return state;
+        return null;
     }
 
     @Override

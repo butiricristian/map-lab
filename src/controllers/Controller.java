@@ -6,6 +6,7 @@ import models.PrgState;
 import models.statements.IStatement;
 import repositories.IPrgRepository;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,6 +39,7 @@ public class Controller {
         String result = "";
         PrgState prog = repo.getCrtProgram();
         MyIStack<IStatement> exeStack = prog.getExeStack();
+        repo.serialize();
         while(!exeStack.isEmpty()){
             try{
                 executeOneStep(prog);
@@ -54,6 +56,7 @@ public class Controller {
             }
         }
         // System.out.println(prog.getOut());
+        repo.deserialize();
         result += prog.getOut().toString();
         return result;
     }
@@ -85,4 +88,13 @@ public class Controller {
     public void changeLogFile(String fileName){
         repo.setLogFilePath(fileName);
     }
+
+    public void serializePrgState() throws IOException{
+        repo.serialize();
+    }
+
+    public void deserializePrgState() throws IOException, ClassNotFoundException {
+        repo.deserialize();
+    }
+
 }

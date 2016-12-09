@@ -5,7 +5,9 @@ import models.ADTs.MyIHeap;
 import models.PrgState;
 import models.expressions.Expression;
 
-public class HeapNew implements IStatement {
+import java.io.Serializable;
+
+public class HeapNew implements IStatement, Serializable {
 
     String var_name;
     Expression expr;
@@ -25,7 +27,7 @@ public class HeapNew implements IStatement {
         else{
             symTbl.update(var_name, addr);
         }
-        return state;
+        return null;
     }
 
     @Override

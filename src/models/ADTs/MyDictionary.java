@@ -1,11 +1,12 @@
 package models.ADTs;
 import models.exceptions.ADTException;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Set;
 
-public class MyDictionary<K, T> implements MyIDictionary<K, T> {
+public class MyDictionary<K, T> implements MyIDictionary<K, T>, Serializable {
     Hashtable<K, T> dict;
 
     public MyDictionary(Hashtable<K, T> dictParam) {

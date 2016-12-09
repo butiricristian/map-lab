@@ -7,11 +7,9 @@ import models.PrgState;
 import models.expressions.Expression;
 
 import java.io.BufferedReader;
+import java.io.Serializable;
 
-/**
- * Created by xps on 17-Nov-16.
- */
-public class ReadFile implements IStatement{
+public class ReadFile implements IStatement, Serializable{
 
     Expression varFile;
     String varName;
@@ -35,7 +33,7 @@ public class ReadFile implements IStatement{
         else{
             symTable.put(varName, Integer.parseInt(line));
         }
-        return state;
+        return null;
     }
 
     @Override

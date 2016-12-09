@@ -1,10 +1,11 @@
 package models.ADTs;
 import models.exceptions.ADTException;
 
+import java.io.Serializable;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-public class MyStack<T> implements MyIStack<T> {
+public class MyStack<T> implements MyIStack<T>, Serializable {
     Stack<T> stack;
     public MyStack(Stack<T> e){
         stack = e;

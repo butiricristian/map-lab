@@ -5,7 +5,9 @@ import models.ADTs.MyIHeap;
 import models.PrgState;
 import models.expressions.Expression;
 
-public class WriteHeap implements IStatement {
+import java.io.Serializable;
+
+public class WriteHeap implements IStatement, Serializable {
 
     String varName;
     Expression expr;
@@ -21,7 +23,7 @@ public class WriteHeap implements IStatement {
         MyIHeap heap = state.getHeap();
         Integer address = symTable.get(varName);
         heap.update(address, expr.eval(symTable, heap));
-        return state;
+        return null;
     }
 
     @Override

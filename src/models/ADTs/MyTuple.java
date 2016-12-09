@@ -1,9 +1,8 @@
 package models.ADTs;
 
-/**
- * Created by xps on 14-Nov-16.
- */
-public class MyTuple<T1, T2> implements MyITuple<T1, T2> {
+import java.io.Serializable;
+
+public class MyTuple<T1, T2> implements MyITuple<T1, T2>, Serializable {
     T1 first;
     T2 second;
 

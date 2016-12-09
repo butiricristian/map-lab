@@ -4,7 +4,9 @@ import models.ADTs.MyIDictionary;
 import models.ADTs.MyIHeap;
 import models.exceptions.HeapException;
 
-public class ReadHeap extends Expression {
+import java.io.Serializable;
+
+public class ReadHeap extends Expression implements Serializable {
 
     String varName;
 

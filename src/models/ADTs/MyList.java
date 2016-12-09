@@ -1,7 +1,8 @@
 package models.ADTs;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MyList<T> implements MyIList<T> {
+public class MyList<T> implements MyIList<T>, Serializable {
     ArrayList<T> list;
 
     public MyList(ArrayList<T> arr){

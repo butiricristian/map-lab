@@ -3,14 +3,12 @@ package models.ADTs;
 import models.exceptions.FileTableException;
 
 import java.io.BufferedReader;
+import java.io.Serializable;
 import java.nio.Buffer;
 import java.util.HashMap;
 import java.util.Set;
 
-/**
- * Created by xps on 22-Nov-16.
- */
-public class MyFileTable implements MyIFileTable{
+public class MyFileTable implements MyIFileTable, Serializable{
 
     HashMap<Integer, MyITuple<String, BufferedReader>> fileTable;
     Integer prevIndex;

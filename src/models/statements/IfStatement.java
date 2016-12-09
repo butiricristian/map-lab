@@ -7,7 +7,9 @@ import models.exceptions.DivBy0Exception;
 import models.exceptions.VarNotDefinedException;
 import models.expressions.Expression;
 
-public class IfStatement implements IStatement{
+import java.io.Serializable;
+
+public class IfStatement implements IStatement, Serializable{
     Expression exp;
     IStatement thenStmt;
     IStatement elseStmt;
@@ -38,7 +40,7 @@ public class IfStatement implements IStatement{
         else{
             stack.push(elseStmt);
         }
-        return state;
+        return null;
     }
 
     @Override

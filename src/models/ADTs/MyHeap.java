@@ -2,10 +2,11 @@ package models.ADTs;
 
 import models.exceptions.HeapException;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MyHeap implements MyIHeap {
+public class MyHeap implements MyIHeap, Serializable {
 
     HashMap<Integer, Integer> heap;
     Integer prevAddr;

@@ -5,7 +5,9 @@ import models.ADTs.MyIList;
 import models.PrgState;
 import models.expressions.Expression;
 
-public class PrintStatement implements IStatement {
+import java.io.Serializable;
+
+public class PrintStatement implements IStatement, Serializable {
     Expression exp;
 
     public PrintStatement(Expression expression){
@@ -23,7 +25,7 @@ public class PrintStatement implements IStatement {
             throw e;
         }
         out.add(eval);
-        return state;
+        return null;
     }
 
     @Override
