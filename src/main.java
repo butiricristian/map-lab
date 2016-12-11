@@ -150,6 +150,7 @@ public class main {
         IPrgRepository prgRepo5 = new PrgRepository(new MyList<>(new ArrayList<>()), "file5.txt");
         Controller ctrl5 = new Controller(prgRepo5);
         IStatement prg5 = new CompoundStatement(
+                new CompoundStatement(
                 new AssignStatement("v", new ConstExpression(10)),
                 new CompoundStatement(
                         new HeapNew("v", new ConstExpression(20)),
@@ -165,6 +166,18 @@ public class main {
                                              )
                                         )
                                 )
+                        )
+                )
+            ),
+                new CompoundStatement(
+                        new AssignStatement("v", new ConstExpression(0)),
+                        new CompoundStatement(
+                                new WhileStatement(new BooleanExpression("<", new VarExpression("v"), new ConstExpression(5)),
+                                        new AssignStatement("v",
+                                                new ArithmExpression("+", new VarExpression("v"), new ConstExpression(1))
+                                        )
+                                ),
+                                new PrintStatement(new VarExpression("v"))
                         )
                 )
         );

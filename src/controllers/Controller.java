@@ -7,10 +7,8 @@ import models.statements.IStatement;
 import repositories.IPrgRepository;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Controller {
@@ -21,19 +19,6 @@ public class Controller {
         repo = repository;
     }
 
-    public PrgState executeOneStep(PrgState state) throws Exception{
-        MyIStack<IStatement> exeStack = state.getExeStack();
-        if(exeStack.isEmpty()){
-            throw new Exception("The stack is empty");
-        }
-        IStatement stmt = exeStack.pop();
-        try{
-            return stmt.execute(state);
-        }
-        catch (Exception e) {
-            throw e;
-        }
-    }
 
     public String executeAllSteps() throws Exception{
         String result = "";
@@ -42,7 +27,7 @@ public class Controller {
         repo.serialize();
         while(!exeStack.isEmpty()){
             try{
-                executeOneStep(prog);
+                prog.oneStep();
                 if(flag) {
                     // System.out.println(resState);
                     result += prog.toString() + "\n";
@@ -55,7 +40,7 @@ public class Controller {
                 throw e;
             }
         }
-        // System.out.println(prog.getOut());
+        System.out.println(prog.getOut());
         repo.deserialize();
         result += prog.getOut().toString();
         return result;
@@ -97,4 +82,7 @@ public class Controller {
         repo.deserialize();
     }
 
+    public List<PrgState> removeCompletedPrg(List<PrgState> inPrgList){
+        inPrgList.stream().filter(p->p.isNotCompleted()).collect(Collectors.toList());
+    }
 }

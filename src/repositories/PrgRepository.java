@@ -80,9 +80,16 @@ public class PrgRepository implements IPrgRepository{
 
     }
 
-    public MyIList<PrgState> getAll(){
+    @Override
+    public MyIList<PrgState> getPrgList(){
         return programs;
     }
+
+    @Override
+    public void setPrgList(MyIList<PrgState> newList){
+        programs = newList;
+    }
+
 
     @Override
     public void setLogFilePath(String newPath){

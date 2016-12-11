@@ -1,5 +1,6 @@
 package repositories;
 
+import models.ADTs.MyIList;
 import models.PrgState;
 import models.exceptions.FileException;
 
@@ -14,5 +15,7 @@ public interface IPrgRepository {
     void setLogFilePath(String newPath);
     void serialize() throws IOException;
     void deserialize() throws IOException, ClassNotFoundException;
+    MyIList<PrgState> getPrgList();
+    void setPrgList(MyIList<PrgState> newList);
 }
 
