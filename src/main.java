@@ -22,7 +22,7 @@ public class main {
         IStatement prg1 = new CompoundStatement(new AssignStatement("v", new ConstExpression(2)), new PrintStatement(new VarExpression("v")));
         PrgState prgState1 = null;
         try {
-            prgState1 = new PrgState(new MyStack<>(new Stack<>()),
+            prgState1 = new PrgState(1, new MyStack<>(new Stack<>()),
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
@@ -54,7 +54,7 @@ public class main {
                 new PrintStatement(new VarExpression("b")));
         PrgState prgState2 = null;
         try {
-            prgState2 = new PrgState(new MyStack<>(new Stack<>()),
+            prgState2 = new PrgState(1, new MyStack<>(new Stack<>()),
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
@@ -93,7 +93,7 @@ public class main {
         );
         PrgState prgState3 = null;
         try {
-            prgState3 = new PrgState(new MyStack<>(new Stack<>()),
+            prgState3 = new PrgState(1, new MyStack<>(new Stack<>()),
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
@@ -132,7 +132,7 @@ public class main {
         );
         PrgState prgState4 = null;
         try {
-            prgState4 = new PrgState(new MyStack<>(new Stack<>()),
+            prgState4 = new PrgState(1, new MyStack<>(new Stack<>()),
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
@@ -183,7 +183,7 @@ public class main {
         );
         PrgState prgState5 = null;
         try {
-            prgState5 = new PrgState(new MyStack<>(new Stack<>()),
+            prgState5 = new PrgState(1, new MyStack<>(new Stack<>()),
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
@@ -211,7 +211,7 @@ public class main {
         );
         PrgState prgState6 = null;
         try {
-            prgState6 = new PrgState(new MyStack<>(new Stack<>()),
+            prgState6 = new PrgState(1, new MyStack<>(new Stack<>()),
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
@@ -239,18 +239,6 @@ public class main {
         m.addCommand(new ChangeLogFilePath("C4", "Type C4 to change the log path for program 4", ctrl4));
         m.addCommand(new ChangeLogFilePath("C5", "Type C5 to change the log path for program 5", ctrl5));
         m.addCommand(new ChangeLogFilePath("C6", "Type C6 to change the log path for program 6", ctrl6));
-//        m.addCommand(new SerializeCommand("S1", "Press S1 to serialize program 1", ctrl1));
-//        m.addCommand(new DeserializeCommand("D1", "Press D1 to deserialize program 1", ctrl1));
-//        m.addCommand(new SerializeCommand("S2", "Press S2 to serialize program 2", ctrl2));
-//        m.addCommand(new DeserializeCommand("D2", "Press D2 to deserialize program 2", ctrl2));
-//        m.addCommand(new SerializeCommand("S3", "Press S3 to serialize program 3", ctrl3));
-//        m.addCommand(new DeserializeCommand("D3", "Press D3 to deserialize program 3", ctrl3));
-//        m.addCommand(new SerializeCommand("S4", "Press S4 to serialize program 4", ctrl4));
-//        m.addCommand(new DeserializeCommand("D4", "Press D4 to deserialize program 4", ctrl4));
-//        m.addCommand(new SerializeCommand("S5", "Press S5 to serialize program 5", ctrl5));
-//        m.addCommand(new DeserializeCommand("D5", "Press D5 to deserialize program 5", ctrl5));
-//        m.addCommand(new SerializeCommand("S6", "Press S6 to serialize program 6", ctrl6));
-//        m.addCommand(new DeserializeCommand("D6", "Press D6 to deserialize program 6", ctrl6));
 
         m.show();
     }

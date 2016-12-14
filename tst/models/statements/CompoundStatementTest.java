@@ -19,7 +19,7 @@ public class CompoundStatementTest {
     @Test
     public void execute() throws Exception {
         CompoundStatement stmt1 = new CompoundStatement(new PrintStatement(new ConstExpression(2)), new PrintStatement(new ConstExpression(10)));
-        PrgState prg1 = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg1 = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

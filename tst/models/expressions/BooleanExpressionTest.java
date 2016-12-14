@@ -9,9 +9,6 @@ import java.util.Hashtable;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by xps on 08-Dec-16.
- */
 public class BooleanExpressionTest {
     @Test
     public void eval() throws Exception {

@@ -16,7 +16,7 @@ public class PrintStatementTest {
     @Test
     public void execute() throws Exception {
         PrintStatement stmt1 = new PrintStatement(new ConstExpression(20));
-        PrgState prg1 = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg1 = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

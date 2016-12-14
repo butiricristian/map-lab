@@ -16,7 +16,7 @@ public class IfStatementTest {
     @Test
     public void execute() throws Exception {
         IfStatement stmt1 = new IfStatement(new ConstExpression(3), new AssignStatement("a", new ConstExpression(1)), new AssignStatement("a", new ConstExpression(0)));
-        PrgState prg1 = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg1 = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
@@ -29,7 +29,7 @@ public class IfStatementTest {
         assertEquals(prg1.getSymTable().get("a"), new Integer(1));
 
         IfStatement stmt2 = new IfStatement(new ConstExpression(0), new AssignStatement("a", new ConstExpression(1)), new AssignStatement("a", new ConstExpression(0)));
-        PrgState prg2 = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg2 = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

@@ -1,27 +1,9 @@
 Exe Stack:
-print(v), v=2
+v=2;print(v)
 Symbol Table:
 {}
 Out:
 []
-File Table:
-{}
-
-Exe Stack:
-print(v)
-Symbol Table:
-{v=2}
-Out:
-[]
-File Table:
-{}
-
-Exe Stack:
-
-Symbol Table:
-{v=2}
-Out:
-[2]
 File Table:
 {}
 
@@ -31,24 +13,6 @@ Symbol Table:
 {}
 Out:
 []
-File Table:
-{}
-
-Exe Stack:
-print(v)
-Symbol Table:
-{v=2}
-Out:
-[]
-File Table:
-{}
-
-Exe Stack:
-
-Symbol Table:
-{v=2}
-Out:
-[2]
 File Table:
 {}
 

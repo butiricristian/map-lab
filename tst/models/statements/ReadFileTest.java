@@ -16,7 +16,7 @@ public class ReadFileTest {
     @Test
     public void execute() throws Exception {
         IStatement read = new CompoundStatement(new OpenRFile("var_f", "test.in"), new CompoundStatement(new ReadFile(new VarExpression("var_f"), "var_c"), new  CloseRFile(new VarExpression("var_f"))));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

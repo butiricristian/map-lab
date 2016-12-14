@@ -20,7 +20,7 @@ public class WhileStatementTest {
     @Test
     public void execute() throws Exception {
         IStatement whileStmt = new CompoundStatement(new AssignStatement("v", new ConstExpression(0)), new WhileStatement(new BooleanExpression("<", new VarExpression("v"), new ConstExpression(5)), new AssignStatement("v", new ArithmExpression("+", new VarExpression("v"), new ConstExpression(1)))));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

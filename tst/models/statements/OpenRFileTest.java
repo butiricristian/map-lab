@@ -19,7 +19,7 @@ public class OpenRFileTest {
     @Test
     public void execute() throws Exception {
         IStatement open = new OpenRFile("var_f", "test.in");
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
@@ -36,7 +36,7 @@ public class OpenRFileTest {
 
         try {
             IStatement open2 = new CompoundStatement(new OpenRFile("var_f", "test.in"), new OpenRFile("var_j", "test.in"));
-            PrgState prg2 = new PrgState(new MyStack<>(new Stack<>()),
+            PrgState prg2 = new PrgState(1, new MyStack<>(new Stack<>()),
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),

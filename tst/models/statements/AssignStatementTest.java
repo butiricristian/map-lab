@@ -16,7 +16,7 @@ public class AssignStatementTest {
     @Test
     public void execute() throws Exception {
         AssignStatement stmt1 = new AssignStatement("a", new ConstExpression(3));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

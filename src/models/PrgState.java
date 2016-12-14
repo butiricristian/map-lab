@@ -87,7 +87,7 @@ public class PrgState implements Serializable{
     }
 
     public boolean isNotCompleted(){
-        return exeStack.isEmpty();
+        return !exeStack.isEmpty();
     }
 
     public PrgState oneStep() throws Exception{

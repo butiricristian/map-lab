@@ -16,7 +16,7 @@ public class WriteHeapTest {
     @Test
     public void execute() throws Exception {
         IStatement heapNew = new CompoundStatement(new HeapNew("v", new ConstExpression(10)), new WriteHeap("v", new ConstExpression(15)));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

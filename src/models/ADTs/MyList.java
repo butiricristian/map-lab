@@ -36,4 +36,9 @@ public class MyList<T> implements MyIList<T>, Serializable {
     public void removeAll(){
         list.clear();
     }
+
+    @Override
+    public ArrayList<T> getContent() {
+        return list;
+    }
 }

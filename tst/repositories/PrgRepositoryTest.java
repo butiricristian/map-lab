@@ -25,7 +25,7 @@ public class PrgRepositoryTest {
     @Test
     public void addProgram() throws Exception {
         IStatement prg1 = new CompoundStatement(new AssignStatement("a", new ConstExpression(2)), new PrintStatement(new VarExpression("a")));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
@@ -33,13 +33,13 @@ public class PrgRepositoryTest {
                 prg1);
         PrgRepository repo = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         repo.addProgram(prg);
-        assertEquals( repo.getAll().isEmpty(), false);
+        assertEquals( repo.getPrgList().isEmpty(), false);
     }
 
     @Test
     public void getCrtProgram() throws Exception {
         IStatement prg1 = new CompoundStatement(new AssignStatement("a", new ConstExpression(2)), new PrintStatement(new VarExpression("a")));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
@@ -53,7 +53,7 @@ public class PrgRepositoryTest {
     @Test
     public void serialize() throws Exception{
         IStatement prg1 = new CompoundStatement(new AssignStatement("a", new ConstExpression(2)), new PrintStatement(new VarExpression("a")));
-        PrgState prg = new PrgState(new MyStack<>(new Stack<>()),
+        PrgState prg = new PrgState(1, new MyStack<>(new Stack<>()),
                 new MyDictionary<>(new Hashtable<>()),
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),

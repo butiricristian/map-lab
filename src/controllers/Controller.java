@@ -3,46 +3,90 @@ package controllers;
 import models.ADTs.MyIList;
 import models.ADTs.MyIStack;
 import models.PrgState;
+import models.exceptions.FileException;
 import models.statements.IStatement;
 import repositories.IPrgRepository;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Controller {
     IPrgRepository repo;
     boolean flag = true;
+    ExecutorService exec;
 
     public Controller(IPrgRepository repository){
         repo = repository;
     }
 
+    public void oneStepForAllPrg(List<PrgState> prgList){
+        prgList.forEach(prg -> {
+            try {
+                repo.logPrgStateExec(prg);
+            } catch (FileException e) {
+                System.out.println(e.getMessage());
+            }
+        });
+
+        List<Callable<PrgState>> callList = prgList.stream().map((PrgState prg) -> (Callable<PrgState>)(() -> { return prg.oneStep(); })).collect(Collectors.toList());
+
+        List<PrgState> newPrgList = null;
+        try {
+            newPrgList = exec.invokeAll(callList).stream().
+                    map(future -> {
+                        try {
+                            return future.get();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            return null;
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                            return null;
+                        }
+                    }).filter(p->p!=null).collect(Collectors.toList());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        prgList.addAll(newPrgList);
+        prgList.forEach(prg -> {
+            try {
+                repo.logPrgStateExec(prg);
+            } catch (FileException e) {
+                e.printStackTrace();
+            }
+        });
+
+        repo.setPrgList((MyIList)prgList);
+
+    }
 
     public String executeAllSteps() throws Exception{
         String result = "";
-        PrgState prog = repo.getCrtProgram();
-        MyIStack<IStatement> exeStack = prog.getExeStack();
+        exec = Executors.newFixedThreadPool(2);
         repo.serialize();
-        while(!exeStack.isEmpty()){
+        while(true){
             try{
-                prog.oneStep();
-                if(flag) {
-                    // System.out.println(resState);
-                    result += prog.toString() + "\n";
+                List<PrgState> prgList = this.removeCompletedPrg(repo.getPrgList().getContent());
+//                prog.getHeap().setContent((HashMap)conservativeGarbageCollector(prog.getSymTable().getContent().values(),
+//                        prog.getHeap().getContent()));
+                if(prgList.size() == 0){
+                    break;
                 }
-                prog.getHeap().setContent((HashMap)conservativeGarbageCollector(prog.getSymTable().getContent().values(),
-                        prog.getHeap().getContent()));
-                repo.logPrgStateExec(prog);
+                oneStepForAllPrg(prgList);
             }
             catch (Exception e){
                 throw e;
             }
         }
-        System.out.println(prog.getOut());
+        exec.shutdownNow();
         repo.deserialize();
-        result += prog.getOut().toString();
         return result;
     }
 
@@ -83,6 +127,6 @@ public class Controller {
     }
 
     public List<PrgState> removeCompletedPrg(List<PrgState> inPrgList){
-        inPrgList.stream().filter(p->p.isNotCompleted()).collect(Collectors.toList());
+        return inPrgList.stream().filter(p->p.isNotCompleted()).collect(Collectors.toList());
     }
 }

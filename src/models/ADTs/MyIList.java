@@ -8,4 +8,5 @@ public interface MyIList<T> {
     void remove(int pos);
     boolean isEmpty();
     void removeAll();
+    ArrayList<T> getContent();
 }
