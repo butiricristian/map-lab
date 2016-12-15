@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="483de13f-f826-4617-ba7e-57bdb96d6713" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file1.txt" afterPath="$PROJECT_DIR$/file1.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/ADTs/MyIList.java" afterPath="$PROJECT_DIR$/src/models/ADTs/MyIList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/ADTs/MyList.java" afterPath="$PROJECT_DIR$/src/models/ADTs/MyList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/PrgState.java" afterPath="$PROJECT_DIR$/src/models/PrgState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/statements/ForkStatement.java" afterPath="$PROJECT_DIR$/src/models/statements/ForkStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/repositories/IPrgRepository.java" afterPath="$PROJECT_DIR$/src/repositories/IPrgRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/repositories/PrgRepository.java" afterPath="$PROJECT_DIR$/src/repositories/PrgRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state.ser" afterPath="$PROJECT_DIR$/state.ser" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/controllers/ControllerTest.java" afterPath="$PROJECT_DIR$/tst/controllers/ControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/PrgStateTest.java" afterPath="$PROJECT_DIR$/tst/models/PrgStateTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/expressions/BooleanExpressionTest.java" afterPath="$PROJECT_DIR$/tst/models/expressions/BooleanExpressionTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/AssignStatementTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/AssignStatementTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/CloseRFileTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/CloseRFileTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/CompoundStatementTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/CompoundStatementTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/HeapNewTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/HeapNewTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/IfStatementTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/IfStatementTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/OpenRFileTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/OpenRFileTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/PrintStatementTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/PrintStatementTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/ReadFileTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/ReadFileTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/WhileStatementTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/WhileStatementTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/models/statements/WriteHeapTest.java" afterPath="$PROJECT_DIR$/tst/models/statements/WriteHeapTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tst/repositories/PrgRepositoryTest.java" afterPath="$PROJECT_DIR$/tst/repositories/PrgRepositoryTest.java" />
     </list>
     <ignored path="Lab_2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,13 +30,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="PrgRepository.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PrgRepository.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/repositories/PrgRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
               <folding>
-                <element signature="e#2162#2163#0" expanded="true" />
+                <element signature="e#2341#2342#0" expanded="true" />
+                <element signature="e#2372#2373#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,8 +46,8 @@
       <file leaf-file-name="PrgState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/PrgState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+            <state relative-caret-position="60">
+              <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
               <folding>
                 <element signature="e#2162#2163#0" expanded="true" />
                 <element signature="e#2204#2205#0" expanded="true" />
@@ -69,23 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForkStatement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/statements/ForkStatement.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/Controller.java">
+      <file leaf-file-name="IPrgRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/repositories/IPrgRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state relative-caret-position="420">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -94,8 +79,8 @@
       <file leaf-file-name="RunExample.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Commands/RunExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="437">
+              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -104,14 +89,14 @@
       <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="570">
+              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file1.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="file1.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -124,31 +109,9 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1166">
-              <caret line="240" column="105" selection-start-line="240" selection-start-column="105" selection-end-line="240" selection-end-column="105" />
+            <state relative-caret-position="807">
+              <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyIList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/ADTs/MyIList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/ADTs/MyList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="e#767#768#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -204,9 +167,6 @@
         <option value="$PROJECT_DIR$/src/models/expressions/BooleanExpression.java" />
         <option value="$PROJECT_DIR$/tst/models/expressions/ReadHeapTest.java" />
         <option value="$PROJECT_DIR$/file5.txt" />
-        <option value="$PROJECT_DIR$/src/repositories/PrgRepository.java" />
-        <option value="$PROJECT_DIR$/src/repositories/IPrgRepository.java" />
-        <option value="$PROJECT_DIR$/src/models/statements/ForkStatement.java" />
         <option value="$PROJECT_DIR$/tst/controllers/ControllerTest.java" />
         <option value="$PROJECT_DIR$/tst/models/expressions/BooleanExpressionTest.java" />
         <option value="$PROJECT_DIR$/tst/models/statements/AssignStatementTest.java" />
@@ -221,12 +181,15 @@
         <option value="$PROJECT_DIR$/tst/models/statements/WriteHeapTest.java" />
         <option value="$PROJECT_DIR$/tst/models/PrgStateTest.java" />
         <option value="$PROJECT_DIR$/tst/repositories/PrgRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/models/ADTs/MyIList.java" />
-        <option value="$PROJECT_DIR$/src/models/ADTs/MyList.java" />
         <option value="$PROJECT_DIR$/src/models/PrgState.java" />
-        <option value="$PROJECT_DIR$/src/controllers/Controller.java" />
         <option value="$PROJECT_DIR$/file1.txt" />
+        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/models/statements/ForkStatement.java" />
+        <option value="$PROJECT_DIR$/src/models/ADTs/MyList.java" />
+        <option value="$PROJECT_DIR$/src/models/ADTs/MyIList.java" />
+        <option value="$PROJECT_DIR$/src/repositories/IPrgRepository.java" />
+        <option value="$PROJECT_DIR$/src/repositories/PrgRepository.java" />
+        <option value="$PROJECT_DIR$/src/controllers/Controller.java" />
       </list>
     </option>
   </component>
@@ -268,6 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,7 +260,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tst" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -314,101 +292,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tst" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tst" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statements" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADTs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -433,7 +321,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -442,7 +329,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="SearchEverywhereHistoryKey" value="Contro&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/controllers/Controller.java&#10;Con&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/controllers/Controller.java&#10;Repos&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/repositories/PrgRepository.java&#10;Contr&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/controllers/Controller.java&#10;prg&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/models/PrgState.java&#10;open&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/models/statements/OpenRFile.java&#10;MENU&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/views/Menu.java&#10;IR&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/repositories/IPrgRepository.java&#10;repo&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/repositories/PrgRepository.java&#10;main&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/main.java" />
+    <property name="SearchEverywhereHistoryKey" value="Repo&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/repositories/PrgRepository.java&#10;Contro&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/controllers/Controller.java&#10;Con&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/controllers/Controller.java&#10;Repos&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/repositories/PrgRepository.java&#10;Contr&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/controllers/Controller.java&#10;prg&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/models/PrgState.java&#10;open&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/models/statements/OpenRFile.java&#10;MENU&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/views/Menu.java&#10;IR&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/repositories/IPrgRepository.java&#10;repo&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/repositories/PrgRepository.java&#10;main&#9;FILE&#9;file://C:/Info@UBB/Semestrul 3/MAP/Lab_2/src/main.java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -921,7 +808,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -962,15 +849,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controllers/Controller.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -979,13 +858,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/state.ser">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/ADTs/MyFileTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1163,19 +1035,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repositories/IPrgRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tst/models/expressions/VarExpressionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,7 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,7 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,7 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-44">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,7 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-165">
           <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,7 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,7 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,7 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,7 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,7 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-795">
           <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1299,38 +1149,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/file1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/statements/ForkStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="227">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/ADTs/MyList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+          <folding>
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/ADTs/MyIList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="390">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repositories/PrgRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/repositories/IPrgRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#2162#2163#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/PrgState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+        <state relative-caret-position="60">
+          <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
           <folding>
             <element signature="e#2162#2163#0" expanded="true" />
             <element signature="e#2204#2205#0" expanded="true" />
@@ -1338,53 +1219,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/ADTs/MyList.java">
+    <entry file="file://$PROJECT_DIR$/src/views/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#767#768#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="570">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Commands/RunExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="240" column="105" selection-start-line="240" selection-start-column="105" selection-end-line="240" selection-end-column="105" />
+        <state relative-caret-position="437">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+        <state relative-caret-position="420">
+          <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file1.txt">
+    <entry file="file://$PROJECT_DIR$/file7.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="359">
+          <caret line="318" column="8" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repositories/PrgRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+          <folding>
+            <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2372#2373#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -5,6 +5,7 @@ import models.PrgState;
 import models.exceptions.FileException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public interface IPrgRepository {
     PrgState getCrtProgram();
@@ -16,6 +17,6 @@ public interface IPrgRepository {
     void serialize() throws IOException;
     void deserialize() throws IOException, ClassNotFoundException;
     MyIList<PrgState> getPrgList();
-    void setPrgList(MyIList<PrgState> newList);
+    void setPrgList(ArrayList<PrgState> newList);
 }
 

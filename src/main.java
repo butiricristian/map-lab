@@ -224,6 +224,43 @@ public class main {
 
 
 
+        //Program 7
+        IPrgRepository prgRepo7 = new PrgRepository(new MyList<>(new ArrayList<>()), "file7.txt");
+        Controller ctrl7 = new Controller(prgRepo7);
+        IStatement prg7 = new CompoundStatement(
+                new AssignStatement("v", new ConstExpression(10)),
+                new CompoundStatement(
+                        new HeapNew("a", new ConstExpression(22)),
+                        new CompoundStatement(
+                                new ForkStatement(new CompoundStatement(
+                                        new WriteHeap("a", new ConstExpression(30)),
+                                        new CompoundStatement(
+                                                new AssignStatement("v", new ConstExpression(32)),
+                                                new CompoundStatement(
+                                                        new PrintStatement(new VarExpression("v")),
+                                                        new PrintStatement(new ReadHeap("a"))
+                                                )
+                                        )
+                                )),
+                                new CompoundStatement(
+                                        new PrintStatement(new VarExpression("v")),
+                                        new PrintStatement(new ReadHeap("a"))
+                                )
+                        ))
+                );
+        PrgState prgState7 = null;
+        try {
+            prgState7 = new PrgState(1, new MyStack<>(new Stack<>()),
+                    new MyDictionary<>(new Hashtable<>()),
+                    new MyList<>(new ArrayList<>()),
+                    new MyFileTable(new HashMap<>()),
+                    new MyHeap(new HashMap<>()), prg7);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        ctrl7.clearRepo();
+        ctrl7.addToRepo(prgState7);
+
 
         Menu m = new Menu();
         m.addCommand(new ExitCommand("0", "Press 0 to exit"));
@@ -233,12 +270,14 @@ public class main {
         m.addCommand(new RunExample("4", "Press 4 to run program 4", ctrl4));
         m.addCommand(new RunExample("5", "Press 5 to run program 5", ctrl5));
         m.addCommand(new RunExample("6", "Press 6 to run program 6", ctrl6));
+        m.addCommand(new RunExample("7", "Press 7 to run program 7", ctrl7));
         m.addCommand(new ChangeLogFilePath("C1", "Type C1 to change the log path for program 1", ctrl1));
         m.addCommand(new ChangeLogFilePath("C2", "Type C2 to change the log path for program 2", ctrl2));
         m.addCommand(new ChangeLogFilePath("C3", "Type C3 to change the log path for program 3", ctrl3));
         m.addCommand(new ChangeLogFilePath("C4", "Type C4 to change the log path for program 4", ctrl4));
         m.addCommand(new ChangeLogFilePath("C5", "Type C5 to change the log path for program 5", ctrl5));
         m.addCommand(new ChangeLogFilePath("C6", "Type C6 to change the log path for program 6", ctrl6));
+        m.addCommand(new ChangeLogFilePath("C7", "Type C7 to change the log path for program 7", ctrl7));
 
         m.show();
     }

@@ -2,6 +2,7 @@ package controllers;
 
 import models.ADTs.MyIList;
 import models.ADTs.MyIStack;
+import models.ADTs.MyList;
 import models.PrgState;
 import models.exceptions.FileException;
 import models.statements.IStatement;
@@ -63,14 +64,14 @@ public class Controller {
             }
         });
 
-        repo.setPrgList((MyIList)prgList);
+        repo.setPrgList((ArrayList<PrgState>)prgList);
 
     }
 
     public String executeAllSteps() throws Exception{
         String result = "";
         exec = Executors.newFixedThreadPool(2);
-        repo.serialize();
+        //repo.serialize();
         while(true){
             try{
                 List<PrgState> prgList = this.removeCompletedPrg(repo.getPrgList().getContent());
@@ -80,13 +81,15 @@ public class Controller {
                     break;
                 }
                 oneStepForAllPrg(prgList);
+                result += prgList.toString() + "\n";
             }
             catch (Exception e){
                 throw e;
             }
         }
         exec.shutdownNow();
-        repo.deserialize();
+        //repo.deserialize();
+        result += repo.getPrgList().get(0).getOut().toString() + "\n";
         return result;
     }
 

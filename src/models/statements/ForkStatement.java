@@ -33,4 +33,9 @@ public class ForkStatement implements IStatement {
                 stmt);
         return prgState2;
     }
+
+    @Override
+    public String toString(){
+        return "fork(" + stmt.toString() + ")";
+    }
 }

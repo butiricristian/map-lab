@@ -1,0 +1,396 @@
+id: 1
+Exe Stack:
+v=10;new(a, 22);fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a))
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+new(a, 22);fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a)), v=10
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+new(a, 22);fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a)), v=10
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+new(a, 22);fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a))
+Symbol Table:
+{v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+new(a, 22);fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a))
+Symbol Table:
+{v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a)), new(a, 22)
+Symbol Table:
+{v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a)), new(a, 22)
+Symbol Table:
+{v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)));print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+print(v);print(readHeap(a)), fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+print(v);print(readHeap(a)), fork(writeHeap(a, 30);v=32;print(v);print(readHeap(a)))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 10
+Exe Stack:
+writeHeap(a, 30);v=32;print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 10
+Exe Stack:
+writeHeap(a, 30);v=32;print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+print(readHeap(a)), print(v)
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 10
+Exe Stack:
+v=32;print(v);print(readHeap(a)), writeHeap(a, 30)
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+print(readHeap(a)), print(v)
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 10
+Exe Stack:
+v=32;print(v);print(readHeap(a)), writeHeap(a, 30)
+Symbol Table:
+{a=1, v=10}
+Out:
+[]
+File Table:
+{}
+Heap:
+{1=22}
+
+id: 1
+Exe Stack:
+print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[10]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+v=32;print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[10]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 1
+Exe Stack:
+print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[10]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+v=32;print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=10}
+Out:
+[10]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 1
+Exe Stack:
+
+Symbol Table:
+{a=1, v=10}
+Out:
+[10, 30]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(v);print(readHeap(a)), v=32
+Symbol Table:
+{a=1, v=10}
+Out:
+[10, 30]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(v);print(readHeap(a)), v=32
+Symbol Table:
+{a=1, v=10}
+Out:
+[10, 30]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=32}
+Out:
+[10, 30]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(v);print(readHeap(a))
+Symbol Table:
+{a=1, v=32}
+Out:
+[10, 30]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(readHeap(a)), print(v)
+Symbol Table:
+{a=1, v=32}
+Out:
+[10, 30]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(readHeap(a)), print(v)
+Symbol Table:
+{a=1, v=32}
+Out:
+[10, 30]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(readHeap(a))
+Symbol Table:
+{a=1, v=32}
+Out:
+[10, 30, 32]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+print(readHeap(a))
+Symbol Table:
+{a=1, v=32}
+Out:
+[10, 30, 32]
+File Table:
+{}
+Heap:
+{1=30}
+
+id: 10
+Exe Stack:
+
+Symbol Table:
+{a=1, v=32}
+Out:
+[10, 30, 32, 30]
+File Table:
+{}
+Heap:
+{1=30}
+

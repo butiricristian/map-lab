@@ -7,6 +7,7 @@ import models.statements.IStatement;
 
 import java.io.*;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PrgRepository implements IPrgRepository{
@@ -58,6 +59,10 @@ public class PrgRepository implements IPrgRepository{
             MyIDictionary<String, Integer> symTable = state.getSymTable();
             MyIList<Integer> out = state.getOut();
             MyIFileTable fileTable = state.getFileTable();
+            MyIHeap heap = state.getHeap();
+
+            log.print("id: ");
+            log.println(state.getId());
 
             log.println("Exe Stack:");
             log.println(exeStack.toString().replace("[", "").replace("]", ""));
@@ -70,6 +75,9 @@ public class PrgRepository implements IPrgRepository{
 
             log.println("File Table:");
             log.println(fileTable);
+
+            log.println("Heap:");
+            log.println(heap);
 
             log.println();
 
@@ -86,8 +94,8 @@ public class PrgRepository implements IPrgRepository{
     }
 
     @Override
-    public void setPrgList(MyIList<PrgState> newList){
-        programs = newList;
+    public void setPrgList(ArrayList<PrgState> newList){
+        programs.setContent(newList);
     }
 
 
