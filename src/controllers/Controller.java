@@ -121,13 +121,13 @@ public class Controller {
         repo.setLogFilePath(fileName);
     }
 
-    public void serializePrgState() throws IOException{
-        repo.serialize();
-    }
+//    public void serializePrgState() throws IOException{
+//        repo.serialize();
+//    }
 
-    public void deserializePrgState() throws IOException, ClassNotFoundException {
-        repo.deserialize();
-    }
+//    public void deserializePrgState() throws IOException, ClassNotFoundException {
+//        repo.deserialize();
+//    }
 
     public List<PrgState> removeCompletedPrg(List<PrgState> inPrgList){
         return inPrgList.stream().filter(p->p.isNotCompleted()).collect(Collectors.toList());

@@ -28,11 +28,6 @@ public class PrgRepository implements IPrgRepository{
     }
 
     @Override
-    public PrgState getCrtProgram() {
-        return programs.get(0);
-    }
-
-    @Override
     public boolean isEmpty(){
         return programs.isEmpty();
     }
@@ -104,41 +99,41 @@ public class PrgRepository implements IPrgRepository{
         logFilePath = newPath;
     }
 
-    @Override
-    public void serialize() throws IOException{
-        try {
-            FileOutputStream fOut = new FileOutputStream("state.ser");
-            ObjectOutputStream objOut = new ObjectOutputStream(fOut);
-            objOut.writeObject(this.getCrtProgram());
-            objOut.close();
-            fOut.close();
-        }
-        catch(IOException e){
-            throw e;
-        }
-    }
+//    @Override
+//    public void serialize() throws IOException{
+//        try {
+//            FileOutputStream fOut = new FileOutputStream("state.ser");
+//            ObjectOutputStream objOut = new ObjectOutputStream(fOut);
+//            objOut.writeObject(this.getCrtProgram());
+//            objOut.close();
+//            fOut.close();
+//        }
+//        catch(IOException e){
+//            throw e;
+//        }
+//    }
 
-    @Override
-    public void deserialize() throws IOException, ClassNotFoundException{
-        try{
-            FileInputStream fIn = new FileInputStream("state.ser");
-            ObjectInputStream objIn = new ObjectInputStream(fIn);
-            PrgState desPrg = (PrgState) objIn.readObject();
-            this.getCrtProgram().setExeStack(desPrg.getExeStack());
-            this.getCrtProgram().setSymTable(desPrg.getSymTable());
-            this.getCrtProgram().setOut(desPrg.getOut());
-            this.getCrtProgram().setFileTable(desPrg.getFileTable());
-            this.getCrtProgram().setHeap(desPrg.getHeap());
-
-            objIn.close();
-            fIn.close();
-        }
-        catch(IOException e){
-            throw e;
-        }
-        catch(ClassNotFoundException e){
-            throw e;
-        }
-
-    }
+//    @Override
+//    public void deserialize() throws IOException, ClassNotFoundException{
+//        try{
+//            FileInputStream fIn = new FileInputStream("state.ser");
+//            ObjectInputStream objIn = new ObjectInputStream(fIn);
+//            PrgState desPrg = (PrgState) objIn.readObject();
+//            this.getCrtProgram().setExeStack(desPrg.getExeStack());
+//            this.getCrtProgram().setSymTable(desPrg.getSymTable());
+//            this.getCrtProgram().setOut(desPrg.getOut());
+//            this.getCrtProgram().setFileTable(desPrg.getFileTable());
+//            this.getCrtProgram().setHeap(desPrg.getHeap());
+//
+//            objIn.close();
+//            fIn.close();
+//        }
+//        catch(IOException e){
+//            throw e;
+//        }
+//        catch(ClassNotFoundException e){
+//            throw e;
+//        }
+//
+//    }
 }

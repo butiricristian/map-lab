@@ -9,9 +9,6 @@ import models.expressions.Expression;
 import java.io.BufferedReader;
 import java.io.Serializable;
 
-/**
- * Created by xps on 17-Nov-16.
- */
 public class CloseRFile implements IStatement, Serializable{
     Expression varFile;
 

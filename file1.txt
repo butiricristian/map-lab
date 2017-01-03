@@ -1,3 +1,4 @@
+id: 1
 Exe Stack:
 v=2;print(v)
 Symbol Table:
@@ -6,7 +7,10 @@ Out:
 []
 File Table:
 {}
+Heap:
+{}
 
+id: 1
 Exe Stack:
 print(v), v=2
 Symbol Table:
@@ -14,5 +18,55 @@ Symbol Table:
 Out:
 []
 File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v), v=2
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v)
+Symbol Table:
+{v=2}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v)
+Symbol Table:
+{v=2}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+
+Symbol Table:
+{v=2}
+Out:
+[2]
+File Table:
+{}
+Heap:
 {}
 
