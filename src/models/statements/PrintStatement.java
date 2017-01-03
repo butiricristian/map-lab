@@ -5,7 +5,9 @@ import models.ADTs.MyIList;
 import models.PrgState;
 import models.expressions.Expression;
 
-public class PrintStatement implements IStatement {
+import java.io.Serializable;
+
+public class PrintStatement implements IStatement, Serializable {
     Expression exp;
 
     public PrintStatement(Expression expression){
@@ -18,12 +20,12 @@ public class PrintStatement implements IStatement {
         MyIList<Integer> out = state.getOut();
         Integer eval = null;
         try {
-            eval = exp.eval(symTable);
+            eval = exp.eval(symTable, state.getHeap());
         } catch (Exception e) {
             throw e;
         }
         out.add(eval);
-        return state;
+        return null;
     }
 
     @Override

@@ -1,8 +1,6 @@
 package controllers;
 
-import models.ADTs.MyDictionary;
-import models.ADTs.MyList;
-import models.ADTs.MyStack;
+import models.ADTs.*;
 import models.PrgState;
 import models.expressions.ConstExpression;
 import models.expressions.VarExpression;
@@ -14,9 +12,7 @@ import org.junit.Test;
 import repositories.IPrgRepository;
 import repositories.PrgRepository;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.Stack;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -29,9 +25,14 @@ public class ControllerTest {
         IPrgRepository prgRepo1 = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         Controller ctrl1 = new Controller(prgRepo1);
         IStatement prg1 = new PrintStatement(new ConstExpression(2));
-        PrgState prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), prg1);
+        PrgState prgState1 = new PrgState(1, new MyStack<>(new Stack<>()),
+                new MyDictionary<>(new Hashtable<>()),
+                new MyList<>(new ArrayList<>()),
+                new MyFileTable(new HashMap<>()),
+                new MyHeap(new HashMap<>()),
+                prg1);
         prgRepo1.addProgram(prgState1);
-        ctrl1.executeOneStep(prgState1);
+        ctrl1.oneStepForAllPrg((List)prgRepo1.getPrgList());
         assertEquals(prgState1.getOut().get(0), new Integer(2));
         assertEquals(prgState1.getExeStack().isEmpty(), true);
     }
@@ -41,7 +42,12 @@ public class ControllerTest {
         IPrgRepository prgRepo1 = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         Controller ctrl1 = new Controller(prgRepo1);
         IStatement prg1 = new CompoundStatement(new AssignStatement("v", new ConstExpression(2)), new PrintStatement(new VarExpression("v")));
-        PrgState prgState1 = new PrgState(new MyStack<>(new Stack<>()), new MyDictionary<>(new Hashtable<>()), new MyList<>(new ArrayList<>()), prg1);
+        PrgState prgState1 = new PrgState(1, new MyStack<>(new Stack<>()),
+                new MyDictionary<>(new Hashtable<>()),
+                new MyList<>(new ArrayList<>()),
+                new MyFileTable(new HashMap<>()),
+                new MyHeap(new HashMap<>()),
+                prg1);
         prgRepo1.addProgram(prgState1);
         ctrl1.executeAllSteps();
         assertEquals(prgState1.getExeStack().isEmpty(), true);

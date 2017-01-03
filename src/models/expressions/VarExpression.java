@@ -1,9 +1,12 @@
 package models.expressions;
 
 import models.ADTs.MyIDictionary;
+import models.ADTs.MyIHeap;
 import models.exceptions.VarNotDefinedException;
 
-public class VarExpression extends Expression {
+import java.io.Serializable;
+
+public class VarExpression extends Expression implements Serializable {
     String varName;
 
     public VarExpression(String var){
@@ -11,7 +14,7 @@ public class VarExpression extends Expression {
     }
 
     @Override
-    public Integer eval(MyIDictionary<String, Integer> symTable) throws Exception {
+    public Integer eval(MyIDictionary<String, Integer> symTable, MyIHeap heap) throws Exception {
         if(symTable.isDefined(varName)) {
             return symTable.get(varName);
         }

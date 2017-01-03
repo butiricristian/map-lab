@@ -1,0 +1,135 @@
+Exe Stack:
+while(v<5){ v=v + 1 };print(v), v=0
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+while(v<5){ v=v + 1 };print(v)
+Symbol Table:
+{v=0}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }
+Symbol Table:
+{v=0}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }, v=v + 1
+Symbol Table:
+{v=0}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }
+Symbol Table:
+{v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }, v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }
+Symbol Table:
+{v=2}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }, v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }
+Symbol Table:
+{v=3}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }, v=v + 1
+Symbol Table:
+{v=3}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }
+Symbol Table:
+{v=4}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }, v=v + 1
+Symbol Table:
+{v=4}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v), while(v<5){ v=v + 1 }
+Symbol Table:
+{v=5}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+print(v)
+Symbol Table:
+{v=5}
+Out:
+[]
+File Table:
+{}
+
+Exe Stack:
+
+Symbol Table:
+{v=5}
+Out:
+[5]
+File Table:
+{}
+

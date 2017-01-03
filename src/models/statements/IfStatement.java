@@ -7,7 +7,9 @@ import models.exceptions.DivBy0Exception;
 import models.exceptions.VarNotDefinedException;
 import models.expressions.Expression;
 
-public class IfStatement implements IStatement{
+import java.io.Serializable;
+
+public class IfStatement implements IStatement, Serializable{
     Expression exp;
     IStatement thenStmt;
     IStatement elseStmt;
@@ -25,7 +27,7 @@ public class IfStatement implements IStatement{
         MyIDictionary<String, Integer> symTable = state.getSymTable();
         Integer eval = null;
         try {
-            eval = exp.eval(symTable);
+            eval = exp.eval(symTable, state.getHeap());
         } catch (VarNotDefinedException e) {
             throw e;
         }
@@ -38,12 +40,12 @@ public class IfStatement implements IStatement{
         else{
             stack.push(elseStmt);
         }
-        return state;
+        return null;
     }
 
     @Override
     public String toString(){
-        return "If(" + exp.toString() + ") Then\n\t" + thenStmt.toString() +
-                "\n" + "Else\n\t" + elseStmt.toString() + "\n";
+        return "If(" + exp.toString() + ") Then: " + thenStmt.toString() +
+                "Else" + elseStmt.toString();
     }
 }

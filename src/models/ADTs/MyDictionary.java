@@ -1,10 +1,12 @@
 package models.ADTs;
 import models.exceptions.ADTException;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Set;
 
-public class MyDictionary<K, T> implements MyIDictionary<K, T> {
+public class MyDictionary<K, T> implements MyIDictionary<K, T>, Serializable {
     Hashtable<K, T> dict;
 
     public MyDictionary(Hashtable<K, T> dictParam) {
@@ -18,10 +20,10 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
 
     @Override
     public T get(K key) throws ADTException {
-        try{
+        if(dict.containsKey(key)){
             return dict.get(key);
         }
-        catch (NullPointerException e){
+        else{
             throw new ADTException("Key not found");
         }
     }
@@ -33,6 +35,16 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
         }
         catch (NullPointerException e){
             throw new ADTException("Key or value are null");
+        }
+    }
+
+    @Override
+    public void remove(K key) throws ADTException{
+        if(dict.containsKey(key)){
+            dict.remove(key);
+        }
+        else{
+            throw new ADTException("Key not found");
         }
     }
 
@@ -49,6 +61,21 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     @Override
     public Set<K> keySet(){
         return dict.keySet();
+    }
+
+    @Override
+    public boolean contains(K key) {
+        return dict.containsKey(key);
+    }
+
+    @Override
+    public Collection<T> values(){
+        return dict.values();
+    }
+
+    @Override
+    public Hashtable<K, T> getContent() {
+        return dict;
     }
 
     @Override

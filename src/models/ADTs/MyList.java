@@ -1,7 +1,10 @@
 package models.ADTs;
+import models.PrgState;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MyList<T> implements MyIList<T> {
+public class MyList<T> implements MyIList<T>, Serializable {
     ArrayList<T> list;
 
     public MyList(ArrayList<T> arr){
@@ -34,5 +37,15 @@ public class MyList<T> implements MyIList<T> {
     @Override
     public void removeAll(){
         list.clear();
+    }
+
+    @Override
+    public ArrayList<T> getContent() {
+        return list;
+    }
+
+    @Override
+    public void setContent(ArrayList<T> newContent){
+        list = newContent;
     }
 }

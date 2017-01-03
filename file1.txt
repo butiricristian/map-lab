@@ -1,48 +1,72 @@
+id: 1
 Exe Stack:
-[print(v), v=2]
+v=2;print(v)
 Symbol Table:
 {}
 Out:
 []
 File Table:
-null
+{}
+Heap:
+{}
+
+id: 1
 Exe Stack:
-[print(v)]
-Symbol Table:
-{v=2}
-Out:
-[]
-File Table:
-null
-Exe Stack:
-[]
-Symbol Table:
-{v=2}
-Out:
-[2]
-File Table:
-null
-Exe Stack:
-[print(v), v=2]
+print(v), v=2
 Symbol Table:
 {}
 Out:
 []
 File Table:
-null
+{}
+Heap:
+{}
+
+id: 1
 Exe Stack:
-[print(v)]
+print(v), v=2
+Symbol Table:
+{}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v)
 Symbol Table:
 {v=2}
 Out:
 []
 File Table:
-null
+{}
+Heap:
+{}
+
+id: 1
 Exe Stack:
+print(v)
+Symbol Table:
+{v=2}
+Out:
 []
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+
 Symbol Table:
 {v=2}
 Out:
 [2]
 File Table:
-null
+{}
+Heap:
+{}
+

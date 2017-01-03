@@ -6,7 +6,10 @@ import models.exceptions.DivBy0Exception;
 import models.exceptions.VarNotDefinedException;
 import models.expressions.Expression;
 
-public class AssignStatement implements IStatement{
+import java.io.Serializable;
+import java.lang.invoke.SerializedLambda;
+
+public class AssignStatement implements IStatement, Serializable {
 
     String var;
     Expression exp;
@@ -21,7 +24,7 @@ public class AssignStatement implements IStatement{
         MyIDictionary<String, Integer> symTable = state.getSymTable();
         Integer eval = null;
         try {
-            eval = exp.eval(symTable);
+            eval = exp.eval(symTable, state.getHeap());
         } catch (VarNotDefinedException e) {
             throw e;
         }
@@ -34,7 +37,7 @@ public class AssignStatement implements IStatement{
         else{
             symTable.put(var, eval);
         }
-        return state;
+        return null;
     }
 
     @Override

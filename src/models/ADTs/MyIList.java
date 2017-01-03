@@ -1,5 +1,7 @@
 package models.ADTs;
 
+import models.PrgState;
+
 import java.util.ArrayList;
 
 public interface MyIList<T> {
@@ -8,4 +10,6 @@ public interface MyIList<T> {
     void remove(int pos);
     boolean isEmpty();
     void removeAll();
+    ArrayList<T> getContent();
+    void setContent(ArrayList<T> newContent);
 }
