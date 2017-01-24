@@ -1,120 +1,40 @@
-id: 1
 Exe Stack:
-a=2 + 3 * 5;b=a + 1;print(b)
+[print(b), a=2 + 3 * 5;b=a + 1]
 Symbol Table:
 {}
 Out:
 []
 File Table:
 {}
-Heap:
-{}
-
-id: 1
 Exe Stack:
-print(b), a=2 + 3 * 5;b=a + 1
+[print(b), b=a + 1, a=2 + 3 * 5]
 Symbol Table:
 {}
 Out:
 []
 File Table:
 {}
-Heap:
-{}
-
-id: 1
 Exe Stack:
-print(b), a=2 + 3 * 5;b=a + 1
-Symbol Table:
-{}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
-Exe Stack:
-print(b), b=a + 1, a=2 + 3 * 5
-Symbol Table:
-{}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
-Exe Stack:
-print(b), b=a + 1, a=2 + 3 * 5
-Symbol Table:
-{}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
-Exe Stack:
-print(b), b=a + 1
+[print(b), b=a + 1]
 Symbol Table:
 {a=17}
 Out:
 []
 File Table:
 {}
-Heap:
-{}
-
-id: 1
 Exe Stack:
-print(b), b=a + 1
-Symbol Table:
-{a=17}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
-Exe Stack:
-print(b)
+[print(b)]
 Symbol Table:
 {b=18, a=17}
 Out:
 []
 File Table:
 {}
-Heap:
-{}
-
-id: 1
 Exe Stack:
-print(b)
-Symbol Table:
-{b=18, a=17}
-Out:
 []
-File Table:
-{}
-Heap:
-{}
-
-id: 1
-Exe Stack:
-
 Symbol Table:
 {b=18, a=17}
 Out:
 [18]
 File Table:
 {}
-Heap:
-{}
-

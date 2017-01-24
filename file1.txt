@@ -1,6 +1,6 @@
 id: 1
 Exe Stack:
-v=2;print(v)
+openRFile(var_f, test.in);readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
 Symbol Table:
 {}
 Out:
@@ -12,7 +12,7 @@ Heap:
 
 id: 1
 Exe Stack:
-print(v), v=2
+readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), openRFile(var_f, test.in)
 Symbol Table:
 {}
 Out:
@@ -24,7 +24,7 @@ Heap:
 
 id: 1
 Exe Stack:
-print(v), v=2
+readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), openRFile(var_f, test.in)
 Symbol Table:
 {}
 Out:
@@ -36,25 +36,241 @@ Heap:
 
 id: 1
 Exe Stack:
-print(v)
+readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
 Symbol Table:
-{v=2}
+{var_f=1}
 Out:
 []
 File Table:
-{}
+{1=(test.in, java.io.BufferedReader@19c84052)}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-print(v)
+readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
 Symbol Table:
-{v=2}
+{var_f=1}
 Out:
 []
 File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
 {}
+
+id: 1
+Exe Stack:
+print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), readFile(var_f, var_c)
+Symbol Table:
+{var_f=1}
+Out:
+[]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), readFile(var_f, var_c)
+Symbol Table:
+{var_f=1}
+Out:
+[]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), print(var_c)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), print(var_c)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), readFile(var_f, var_c);print(var_c)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), readFile(var_f, var_c);print(var_c)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), print(var_c), readFile(var_f, var_c)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), print(var_c), readFile(var_f, var_c)
+Symbol Table:
+{var_f=1, var_c=15}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), print(var_c)
+Symbol Table:
+{var_f=1, var_c=50}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f), print(var_c)
+Symbol Table:
+{var_f=1, var_c=50}
+Out:
+[15]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f)
+Symbol Table:
+{var_f=1, var_c=50}
+Out:
+[15, 50]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+closeRFile(var_f)
+Symbol Table:
+{var_f=1, var_c=50}
+Out:
+[15, 50]
+File Table:
+{1=(test.in, java.io.BufferedReader@19c84052)}
 Heap:
 {}
 
@@ -62,9 +278,9 @@ id: 1
 Exe Stack:
 
 Symbol Table:
-{v=2}
+{var_f=1, var_c=50}
 Out:
-[2]
+[15, 50]
 File Table:
 {}
 Heap:

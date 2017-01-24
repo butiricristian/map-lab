@@ -93,6 +93,19 @@ public class Controller {
         return result;
     }
 
+    public void allStepGUI() throws Exception{
+        exec = Executors.newFixedThreadPool(2);
+        List<PrgState> prgList = removeCompletedPrg(repo.getPrgList().getContent());
+        if(prgList.size() == 0){
+            exec.shutdownNow();
+            throw new Exception("Program done exception");
+        }
+        else{
+            oneStepForAllPrg(prgList);
+            exec.shutdownNow();
+        }
+    }
+
     public void addToRepo(PrgState pr){
         repo.addProgram(pr);
     }
@@ -107,6 +120,10 @@ public class Controller {
         return heap.entrySet().stream().
                 filter(e -> symTableValues.contains(e.getKey())).
                 collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    public MyIList<PrgState> getPrgStates(){
+        return repo.getPrgList();
     }
 
     public void setFlag(boolean cond){
