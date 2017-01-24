@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="483de13f-f826-4617-ba7e-57bdb96d6713" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUIInterpreter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab_2/controllers/Controller.class" afterPath="$PROJECT_DIR$/out/production/Lab_2/controllers/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab_2/main.class" afterPath="$PROJECT_DIR$/out/production/Lab_2/main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyFileTable.class" afterPath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyFileTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyIFileTable.class" afterPath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyIFileTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyIStack.class" afterPath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyIStack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyStack.class" afterPath="$PROJECT_DIR$/out/production/Lab_2/models/ADTs/MyStack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file1.txt" afterPath="$PROJECT_DIR$/file1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/Controller.java" afterPath="$PROJECT_DIR$/src/controllers/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/ADTs/MyFileTable.java" afterPath="$PROJECT_DIR$/src/models/ADTs/MyFileTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/ADTs/MyIFileTable.java" afterPath="$PROJECT_DIR$/src/models/ADTs/MyIFileTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/ADTs/MyIStack.java" afterPath="$PROJECT_DIR$/src/models/ADTs/MyIStack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/ADTs/MyStack.java" afterPath="$PROJECT_DIR$/src/models/ADTs/MyStack.java" />
-    </list>
+    <list default="true" id="483de13f-f826-4617-ba7e-57bdb96d6713" name="Default" comment="" />
     <ignored path="Lab_2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,8 +34,8 @@
       <file leaf-file-name="GUIInterpreter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUIInterpreter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="533" column="79" selection-start-line="533" selection-start-column="79" selection-end-line="533" selection-end-column="79" />
+            <state relative-caret-position="90">
+              <caret line="530" column="25" selection-start-line="530" selection-start-column="25" selection-end-line="530" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -641,7 +624,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -654,7 +637,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16614583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16614583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1013,8 +996,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUIInterpreter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="533" column="79" selection-start-line="533" selection-start-column="79" selection-end-line="533" selection-end-column="79" />
+        <state relative-caret-position="90">
+          <caret line="530" column="25" selection-start-line="530" selection-start-column="25" selection-end-line="530" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
