@@ -51,6 +51,11 @@ public class MyFileTable implements MyIFileTable, Serializable{
     }
 
     @Override
+    public HashMap<Integer, MyITuple<String, BufferedReader>> getContent(){
+        return fileTable;
+    }
+
+    @Override
     public String toString(){
         return fileTable.toString();
     }

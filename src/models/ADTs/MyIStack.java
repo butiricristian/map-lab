@@ -8,4 +8,5 @@ public interface MyIStack<T> {
     boolean isEmpty();
     void push(T el) throws  ADTException;
     T pop() throws ADTException;
+    Stack<T> getContent();
 }
