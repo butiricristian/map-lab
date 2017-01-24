@@ -39,4 +39,9 @@ public class MyStack<T> implements MyIStack<T>, Serializable {
     public String toString(){
         return stack.toString();
     }
+
+    @Override
+    public Stack<T> getContent(){
+        return stack;
+    }
 }

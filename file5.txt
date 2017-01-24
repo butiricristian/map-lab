@@ -1,16 +1,3 @@
-id: 1
-Exe Stack:
-v=10;new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0;v=0;while(v<5){ v=v + 1 };print(v)
-Symbol Table:
-{}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), v=10;new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
 Symbol Table:
@@ -19,22 +6,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), v=10;new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
-Symbol Table:
-{}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0, v=10
 Symbol Table:
@@ -43,22 +15,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0, v=10
-Symbol Table:
-{}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
 Symbol Table:
@@ -67,22 +24,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), new(v, 20);new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
-Symbol Table:
-{v=10}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0, new(v, 20)
 Symbol Table:
@@ -91,22 +33,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0, new(v, 20)
-Symbol Table:
-{v=10}
-Out:
-[]
-File Table:
-{}
-Heap:
-{}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
 Symbol Table:
@@ -115,22 +42,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{1=20}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), new(a, 22);writeHeap(a, 30);print(a);print(readHeap(a));a=0
-Symbol Table:
-{v=1}
-Out:
-[]
-File Table:
-{}
-Heap:
-{1=20}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), writeHeap(a, 30);print(a);print(readHeap(a));a=0, new(a, 22)
 Symbol Table:
@@ -139,22 +51,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{1=20}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), writeHeap(a, 30);print(a);print(readHeap(a));a=0, new(a, 22)
-Symbol Table:
-{v=1}
-Out:
-[]
-File Table:
-{}
-Heap:
-{1=20}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), writeHeap(a, 30);print(a);print(readHeap(a));a=0
 Symbol Table:
@@ -163,22 +60,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{1=20, 2=22}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), writeHeap(a, 30);print(a);print(readHeap(a));a=0
-Symbol Table:
-{a=2, v=1}
-Out:
-[]
-File Table:
-{}
-Heap:
-{1=20, 2=22}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), print(a);print(readHeap(a));a=0, writeHeap(a, 30)
 Symbol Table:
@@ -187,22 +69,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{1=20, 2=22}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), print(a);print(readHeap(a));a=0, writeHeap(a, 30)
-Symbol Table:
-{a=2, v=1}
-Out:
-[]
-File Table:
-{}
-Heap:
-{1=20, 2=22}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), print(a);print(readHeap(a));a=0
 Symbol Table:
@@ -211,22 +78,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), print(a);print(readHeap(a));a=0
-Symbol Table:
-{a=2, v=1}
-Out:
-[]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), print(readHeap(a));a=0, print(a)
 Symbol Table:
@@ -235,22 +87,7 @@ Out:
 []
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), print(readHeap(a));a=0, print(a)
-Symbol Table:
-{a=2, v=1}
-Out:
-[]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), print(readHeap(a));a=0
 Symbol Table:
@@ -259,22 +96,7 @@ Out:
 [2]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), print(readHeap(a));a=0
-Symbol Table:
-{a=2, v=1}
-Out:
-[2]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), a=0, print(readHeap(a))
 Symbol Table:
@@ -283,22 +105,7 @@ Out:
 [2]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), a=0, print(readHeap(a))
-Symbol Table:
-{a=2, v=1}
-Out:
-[2]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v), a=0
 Symbol Table:
@@ -307,22 +114,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v), a=0
-Symbol Table:
-{a=2, v=1}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 v=0;while(v<5){ v=v + 1 };print(v)
 Symbol Table:
@@ -331,22 +123,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-v=0;while(v<5){ v=v + 1 };print(v)
-Symbol Table:
-{a=0, v=1}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 while(v<5){ v=v + 1 };print(v), v=0
 Symbol Table:
@@ -355,22 +132,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-while(v<5){ v=v + 1 };print(v), v=0
-Symbol Table:
-{a=0, v=1}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 while(v<5){ v=v + 1 };print(v)
 Symbol Table:
@@ -379,22 +141,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-while(v<5){ v=v + 1 };print(v)
-Symbol Table:
-{a=0, v=0}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }
 Symbol Table:
@@ -403,22 +150,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }
-Symbol Table:
-{a=0, v=0}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }, v=v + 1
 Symbol Table:
@@ -427,22 +159,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }, v=v + 1
-Symbol Table:
-{a=0, v=0}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }
 Symbol Table:
@@ -451,22 +168,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }
-Symbol Table:
-{a=0, v=1}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }, v=v + 1
 Symbol Table:
@@ -475,22 +177,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }, v=v + 1
-Symbol Table:
-{a=0, v=1}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }
 Symbol Table:
@@ -499,22 +186,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }
-Symbol Table:
-{a=0, v=2}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }, v=v + 1
 Symbol Table:
@@ -523,22 +195,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }, v=v + 1
-Symbol Table:
-{a=0, v=2}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }
 Symbol Table:
@@ -547,22 +204,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }
-Symbol Table:
-{a=0, v=3}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }, v=v + 1
 Symbol Table:
@@ -571,22 +213,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }, v=v + 1
-Symbol Table:
-{a=0, v=3}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }
 Symbol Table:
@@ -595,22 +222,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }
-Symbol Table:
-{a=0, v=4}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }, v=v + 1
 Symbol Table:
@@ -619,22 +231,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }, v=v + 1
-Symbol Table:
-{a=0, v=4}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v), while(v<5){ v=v + 1 }
 Symbol Table:
@@ -643,22 +240,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v), while(v<5){ v=v + 1 }
-Symbol Table:
-{a=0, v=5}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 print(v)
 Symbol Table:
@@ -667,22 +249,7 @@ Out:
 [2, 30]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
-id: 1
-Exe Stack:
-print(v)
-Symbol Table:
-{a=0, v=5}
-Out:
-[2, 30]
-File Table:
-{}
-Heap:
-{1=20, 2=30}
-
-id: 1
 Exe Stack:
 
 Symbol Table:
@@ -691,6 +258,4 @@ Out:
 [2, 30, 5]
 File Table:
 {}
-Heap:
-{1=20, 2=30}
 
