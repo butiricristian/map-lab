@@ -31,6 +31,7 @@ public class PrgStateTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 prg1);
     }
 

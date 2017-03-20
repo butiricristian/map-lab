@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.scene.control.Alert;
 import models.ADTs.MyIList;
 import models.ADTs.MyIStack;
 import models.ADTs.MyList;
@@ -9,17 +10,19 @@ import models.statements.IStatement;
 import repositories.IPrgRepository;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Controller {
     IPrgRepository repo;
-    boolean flag = true;
+    boolean flag = false;
     ExecutorService exec;
 
     public Controller(IPrgRepository repository){
@@ -38,6 +41,7 @@ public class Controller {
         List<Callable<PrgState>> callList = prgList.stream().map((PrgState prg) -> (Callable<PrgState>)(() -> { return prg.oneStep(); })).collect(Collectors.toList());
 
         List<PrgState> newPrgList = null;
+
         try {
             newPrgList = exec.invokeAll(callList).stream().
                     map(future -> {
@@ -47,8 +51,7 @@ public class Controller {
                             e.printStackTrace();
                             return null;
                         } catch (ExecutionException e) {
-                            e.printStackTrace();
-                            return null;
+                            throw new UncheckedIOException(new IOException(e.getMessage()));
                         }
                     }).filter(p->p!=null).collect(Collectors.toList());
         } catch (InterruptedException e) {

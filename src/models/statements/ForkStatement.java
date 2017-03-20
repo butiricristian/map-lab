@@ -11,9 +11,11 @@ import java.util.Stack;
 
 public class ForkStatement implements IStatement {
     IStatement stmt;
+    static int id;
 
     public ForkStatement(IStatement stmt){
         this.stmt = stmt;
+        id = 0;
     }
 
     @Override
@@ -24,13 +26,15 @@ public class ForkStatement implements IStatement {
         for(String key:oldSymTable.keySet()){
             newSymTable.put(key, oldSymTable.get(key));
         }
-        PrgState prgState2 = new PrgState(state.getId()*10,
+        PrgState prgState2 = new PrgState(state.getId()*10 + id,
                 newExeStack,
                 newSymTable,
                 state.getOut(),
                 state.getFileTable(),
                 state.getHeap(),
+                state.getLockTable(),
                 stmt);
+        id++;
         return prgState2;
     }
 

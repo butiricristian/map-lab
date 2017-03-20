@@ -21,6 +21,7 @@ public class PrintStatementTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 stmt1);
         stmt1.execute(prg1);
         assertEquals(prg1.getOut().get(0), new Integer(20));

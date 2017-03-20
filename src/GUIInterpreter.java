@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -27,6 +28,7 @@ import repositories.IPrgRepository;
 import repositories.PrgRepository;
 
 import java.io.BufferedReader;
+import java.io.UncheckedIOException;
 import java.util.*;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -49,6 +51,7 @@ public class GUIInterpreter extends Application {
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
                     new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
                     prg[1]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -81,6 +84,7 @@ public class GUIInterpreter extends Application {
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
                     new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
                     prg[2]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -120,6 +124,7 @@ public class GUIInterpreter extends Application {
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
                     new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
                     prg[3]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -158,7 +163,9 @@ public class GUIInterpreter extends Application {
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
-                    new MyHeap(new HashMap<>()), prg[4]);
+                    new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
+                    prg[4]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -209,7 +216,9 @@ public class GUIInterpreter extends Application {
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
-                    new MyHeap(new HashMap<>()), prg[5]);
+                    new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
+                    prg[5]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -237,7 +246,9 @@ public class GUIInterpreter extends Application {
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
-                    new MyHeap(new HashMap<>()), prg[6]);
+                    new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
+                    prg[6]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -276,12 +287,131 @@ public class GUIInterpreter extends Application {
                     new MyDictionary<>(new Hashtable<>()),
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
-                    new MyHeap(new HashMap<>()), prg[7]);
+                    new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
+                    prg[7]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         ctrl7.clearRepo();
         ctrl7.addToRepo(prgState7);
+
+
+
+
+        //PROGRAM 8
+        prg[8] = new CompoundStatement(
+                new HeapNew("v1", new ConstExpression(20)),
+                new CompoundStatement(
+                        new HeapNew("v2", new ConstExpression(30)),
+                        new CompoundStatement(
+                                new NewLockStatement("x"),
+                                new CompoundStatement(
+                                        new ForkStatement(
+                                                new CompoundStatement(
+                                                    new ForkStatement(
+                                                            new CompoundStatement(
+                                                                    new LockVarStatement("x"),
+                                                                    new CompoundStatement(
+                                                                            new WriteHeap("v1", new ArithmExpression("-", new ReadHeap("v1"), new ConstExpression(1))),
+                                                                            new UnlockVarStatement("x")
+                                                                    )
+                                                            )
+                                                    ),
+                                                    new CompoundStatement(
+                                                            new LockVarStatement("x"),
+                                                            new CompoundStatement(
+                                                                    new WriteHeap("v1", new ArithmExpression("+", new ReadHeap("v1"), new ConstExpression(1))),
+                                                                    new UnlockVarStatement("x")
+                                                            )
+                                                    )
+                                                )
+                                        ),
+                                        new CompoundStatement(
+                                                new NewLockStatement("q"),
+                                                new CompoundStatement(
+                                                        new ForkStatement(
+                                                                new CompoundStatement(
+                                                                        new ForkStatement(
+                                                                                new CompoundStatement(
+                                                                                        new LockVarStatement("q"),
+                                                                                        new CompoundStatement(
+                                                                                                new WriteHeap("v2", new ArithmExpression("+", new ReadHeap("v2"), new ConstExpression(5))),
+                                                                                                new UnlockVarStatement("q")
+                                                                                        )
+                                                                                )
+                                                                        ),
+                                                                        new CompoundStatement(
+                                                                                new AssignStatement("m", new ConstExpression(100)),
+                                                                                new CompoundStatement(
+                                                                                        new LockVarStatement("q"),
+                                                                                        new CompoundStatement(
+                                                                                                new WriteHeap("v2", new ArithmExpression("+", new ReadHeap("v2"), new ConstExpression(1))),
+                                                                                                new UnlockVarStatement("q")
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        ),
+                                                        new CompoundStatement(
+                                                                new AssignStatement("z", new ConstExpression(200)),
+                                                                new CompoundStatement(
+                                                                        new AssignStatement("z", new ConstExpression(300)),
+                                                                        new CompoundStatement(
+                                                                                new AssignStatement("z", new ConstExpression(400)),
+                                                                                new CompoundStatement(
+                                                                                        new LockVarStatement("x"),
+                                                                                        new CompoundStatement(
+                                                                                                new PrintStatement(new ReadHeap("v1")),
+                                                                                                new CompoundStatement(
+                                                                                                        new UnlockVarStatement("x"),
+                                                                                                        new CompoundStatement(
+                                                                                                                new LockVarStatement("q"),
+                                                                                                                new CompoundStatement(
+                                                                                                                        new PrintStatement(new ReadHeap("v2")),
+                                                                                                                        new UnlockVarStatement("q")
+                                                                                                                )
+                                                                                                        )
+                                                                                                )
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+
+                                )
+                        )
+                )
+        );
+
+
+
+
+
+
+        //PROGRAM 9
+        prg[9] = new CompoundStatement(
+                new AssignStatement("v", new ConstExpression(20)),
+                new CompoundStatement(
+                        new ForStatement("v",
+                                new ConstExpression(0),
+                                new ConstExpression(3),
+                                new ArithmExpression("+", new VarExpression("v"), new ConstExpression(1)),
+                                new ForkStatement(
+                                        new CompoundStatement(
+                                                new PrintStatement(new VarExpression("v")),
+                                                new AssignStatement("v", new ArithmExpression("+", new VarExpression("v"), new ConstExpression(1)))
+                                        )
+                                )
+                        ),
+                        new PrintStatement(new ArithmExpression("*", new VarExpression("v"), new ConstExpression(10)))
+                )
+        );
+
+
+
 
 
 
@@ -294,7 +424,8 @@ public class GUIInterpreter extends Application {
 
         ListView lvPrograms = new ListView(FXCollections.observableArrayList());
         lvPrograms.getItems().addAll(prg[1].toString(), prg[2].toString(), prg[3].toString(),
-                prg[4].toString(), prg[5].toString(), prg[6].toString(), prg[7].toString());
+                prg[4].toString(), prg[5].toString(), prg[6].toString(), prg[7].toString(),
+                prg[8].toString(), prg[9].toString());
         bp.setCenter(lvPrograms);
 
 //        lvPrograms.getSelectionModel().selectedItemProperty().addListener(
@@ -313,7 +444,7 @@ public class GUIInterpreter extends Application {
             @Override
             public void handle(ActionEvent event) {
                 int i = lvPrograms.getSelectionModel().getSelectedIndex();
-                if(i>=0 && i<=6) {
+                if(i>=0 && i<=8) {
                     openNextWindow(prg[i + 1], stage);
                     stage.hide();
                 }
@@ -333,6 +464,7 @@ public class GUIInterpreter extends Application {
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
                     new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
                     prg);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -346,7 +478,7 @@ public class GUIInterpreter extends Application {
 
         GridPane root = new GridPane();
         root.setHgap(10);
-        Scene scene = new Scene(root, 1000 , 500);
+        Scene scene = new Scene(root, 1900 , 500);
         Stage stage = new Stage();
         stage.setTitle("Toy Language Interpreter");
         stage.setScene(scene);
@@ -395,7 +527,7 @@ public class GUIInterpreter extends Application {
 
         Label lOut = new Label("Out");
         boxOut.getChildren().addAll(lOut, lvOut);
-        root.add(boxOut, 1, 1);
+        root.add(boxOut, 0, 2);
 
 
         VBox boxFileTable = new VBox();
@@ -424,7 +556,42 @@ public class GUIInterpreter extends Application {
         Label lFileTable = new Label("File Table");
         boxFileTable.getChildren().addAll(lFileTable, tvFileTable);
 
-        root.add(boxFileTable, 2, 1);
+        root.add(boxFileTable, 1, 1);
+
+
+
+
+
+
+        VBox boxLockTable = new VBox();
+
+        TableView tvLockTable = new TableView();
+        TableColumn<Map.Entry<Integer, Integer>, String> tcLocation = new TableColumn<>("Location");
+        TableColumn<Map.Entry<Integer, Integer>, String> tcLockValue = new TableColumn<>("Value");
+
+        tcLocation.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Integer, Integer>, String>, ObservableValue<String>>(){
+            @Override
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Map.Entry<Integer, Integer>, String> p){
+                return new SimpleStringProperty(p.getValue().getKey().toString());
+            }
+        });
+        tcLockValue.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Map.Entry<Integer, Integer>, String>, ObservableValue<String>>(){
+            @Override
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Map.Entry<Integer, Integer>, String> p){
+                return new SimpleStringProperty(p.getValue().getValue().toString());
+            }
+        });
+
+        tvLockTable.getColumns().addAll(tcLocation, tcLockValue);
+
+        ObservableList<Map.Entry<Integer, Integer>> lockTable = FXCollections.observableArrayList(prgState.getLockTable().getContent().entrySet());
+        tvLockTable.setItems(lockTable);
+        Label lLockTable = new Label("Lock Table");
+        boxLockTable.getChildren().addAll(lLockTable, tvLockTable);
+
+        root.add(boxLockTable, 1, 2);
+
+
 
 
 
@@ -438,7 +605,7 @@ public class GUIInterpreter extends Application {
 
         Label lPrgStates = new Label("Prg States");
         boxPrgStates.getChildren().addAll(lPrgStates, lvPrgStates);
-        root.add(boxPrgStates, 3, 1);
+        root.add(boxPrgStates, 2, 1, 1, 2);
 
 
 
@@ -472,7 +639,7 @@ public class GUIInterpreter extends Application {
         Label lSymTable = new Label("Symbol Table");
         boxSymTable.getChildren().addAll(lSymTable, tvSymTable);
 
-        root.add(boxSymTable, 4, 1);
+        root.add(boxSymTable, 3, 1, 1, 2);
 
 
 
@@ -503,11 +670,13 @@ public class GUIInterpreter extends Application {
 
         Label lExeStack = new Label("Exe Stack");
         boxExeStack.getChildren().addAll(lExeStack, lvExeStack);
-        root.add(boxExeStack, 5, 1);
+        root.add(boxExeStack, 4, 1, 1, 2);
 
 
 
         HBox buttons = new HBox();
+        buttons.setSpacing(10);
+        buttons.setPadding(new Insets(10, 10, 10, 10));
         Button backBtn = new Button("Back");
         backBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -536,6 +705,7 @@ public class GUIInterpreter extends Application {
                     fileTable.setAll(prgs.get(0).getFileTable().getContent().entrySet());
                     symTable.setAll(prgs.get(0).getSymTable().getContent().entrySet());
                     exeStack.setAll(prgs.get(0).getExeStack().getContent());
+                    lockTable.setAll(prgs.get(0).getLockTable().getContent().entrySet());
                     tf.setText("Number of program states: " + Integer.toString(prgIds.size()));
                     lvPrgStates.getSelectionModel().select(0);
                     if(prgIds.size() == 0){
@@ -544,6 +714,11 @@ public class GUIInterpreter extends Application {
                         done.setContentText("The program has finished");
                         done.showAndWait();
                     }
+                } catch(UncheckedIOException e) {
+                    Alert done = new Alert(Alert.AlertType.ERROR);
+                    done.setTitle("Error");
+                    done.setContentText(e.getMessage());
+                    done.showAndWait();
                 }
                 catch(Exception e) {
                     ArrayList<Integer> prgIds = new ArrayList<>();
@@ -557,7 +732,7 @@ public class GUIInterpreter extends Application {
         });
 
         buttons.getChildren().addAll(backBtn, btnOneStep);
-        root.add(buttons, 0, 2);
+        root.add(buttons, 0, 3);
 
         lvPrgStates.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<Integer>() {

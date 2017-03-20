@@ -24,6 +24,7 @@ public class OpenRFileTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 open);
         open.execute(prg);
         try {
@@ -41,6 +42,7 @@ public class OpenRFileTest {
                     new MyList<>(new ArrayList<>()),
                     new MyFileTable(new HashMap<>()),
                     new MyHeap(new HashMap<>()),
+                    new LockTable(new Hashtable<>()),
                     open2);
             while(!prg2.getExeStack().isEmpty()) {
                 IStatement res = prg2.getExeStack().pop();

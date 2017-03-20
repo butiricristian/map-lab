@@ -13,16 +13,18 @@ public class PrgState implements Serializable{
     MyIFileTable fileTable;
     MyIHeap heap;
     IStatement originalProg;
+    ILockTable lockTable;
     Integer id;
 
 
-    public PrgState(Integer id, MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIFileTable fTable, MyIHeap heap, IStatement prg) throws Exception{
+    public PrgState(Integer id, MyIStack<IStatement> exe, MyIDictionary<String, Integer> sym, MyIList<Integer> out, MyIFileTable fTable, MyIHeap heap, ILockTable lockTable, IStatement prg) throws Exception{
         exeStack = exe;
         symTable = sym;
         this.out = out;
         fileTable = fTable;
         this.heap = heap;
         originalProg = prg;
+        this.lockTable = lockTable;
         this.id = id;
         try {
             exe.push(prg);
@@ -55,6 +57,7 @@ public class PrgState implements Serializable{
     public MyIHeap getHeap(){
         return heap;
     }
+    public ILockTable getLockTable() { return lockTable; }
 
 
     //setters

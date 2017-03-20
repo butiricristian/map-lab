@@ -30,6 +30,7 @@ public class PrgRepositoryTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 prg1);
         PrgRepository repo = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         repo.addProgram(prg);
@@ -44,6 +45,7 @@ public class PrgRepositoryTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 prg1);
         PrgRepository repo = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         repo.addProgram(prg);
@@ -58,6 +60,7 @@ public class PrgRepositoryTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 prg1);
         PrgRepository repo = new PrgRepository(new MyList<>(new ArrayList<>()), "fileTest.txt");
         repo.addProgram(prg);

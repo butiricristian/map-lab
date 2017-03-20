@@ -29,6 +29,7 @@ public class CloseRFileTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 close);
         while(!prg.getExeStack().isEmpty()) {
             IStatement res = prg.getExeStack().pop();

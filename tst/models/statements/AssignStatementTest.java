@@ -21,6 +21,7 @@ public class AssignStatementTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 stmt1);
         assertEquals(stmt1.execute(prg).getSymTable().get("a"), new Integer(3));
     }

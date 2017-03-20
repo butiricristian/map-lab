@@ -24,6 +24,7 @@ public class CompoundStatementTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 stmt1);
         while(!prg1.getExeStack().isEmpty()) {
             IStatement crtStmt = prg1.getExeStack().pop();

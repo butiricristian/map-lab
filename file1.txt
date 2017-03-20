@@ -1,6 +1,9 @@
 id: 1
 Exe Stack:
-openRFile(var_f, test.in);readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+v=20;
+for(var=0;3;v=v + 1)fork(print(v);
+v=v + 1);
+print(v * 10)
 Symbol Table:
 {}
 Out:
@@ -12,7 +15,9 @@ Heap:
 
 id: 1
 Exe Stack:
-readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), openRFile(var_f, test.in)
+for(var=0;3;v=v + 1)fork(print(v);
+v=v + 1);
+print(v * 10), v=20
 Symbol Table:
 {}
 Out:
@@ -24,7 +29,9 @@ Heap:
 
 id: 1
 Exe Stack:
-readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), openRFile(var_f, test.in)
+for(var=0;3;v=v + 1)fork(print(v);
+v=v + 1);
+print(v * 10), v=20
 Symbol Table:
 {}
 Out:
@@ -36,241 +43,765 @@ Heap:
 
 id: 1
 Exe Stack:
-readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+for(var=0;3;v=v + 1)fork(print(v);
+v=v + 1);
+print(v * 10)
 Symbol Table:
-{var_f=1}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-readFile(var_f, var_c);print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+for(var=0;3;v=v + 1)fork(print(v);
+v=v + 1);
+print(v * 10)
 Symbol Table:
-{var_f=1}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), readFile(var_f, var_c)
+print(v * 10), for(var=0;3;v=v + 1)fork(print(v);
+v=v + 1)
 Symbol Table:
-{var_f=1}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), readFile(var_f, var_c)
+print(v * 10), for(var=0;3;v=v + 1)fork(print(v);
+v=v + 1)
 Symbol Table:
-{var_f=1}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+print(v * 10), v=0;
+while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
 Symbol Table:
-{var_f=1, var_c=15}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-print(var_c);If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+print(v * 10), v=0;
+while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
 Symbol Table:
-{var_f=1, var_c=15}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), print(var_c)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=0
 Symbol Table:
-{var_f=1, var_c=15}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f), print(var_c)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=0
 Symbol Table:
-{var_f=1, var_c=15}
+{v=20}
 Out:
 []
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0);closeRFile(var_f)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-closeRFile(var_f), If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, fork(print(v);
+v=v + 1);
+v=v + 1
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-closeRFile(var_f), If(var_c) Then: readFile(var_f, var_c);print(var_c)Elseprint(0)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, fork(print(v);
+v=v + 1);
+v=v + 1
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-closeRFile(var_f), readFile(var_f, var_c);print(var_c)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1, fork(print(v);
+v=v + 1)
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-closeRFile(var_f), readFile(var_f, var_c);print(var_c)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1, fork(print(v);
+v=v + 1)
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-closeRFile(var_f), print(var_c), readFile(var_f, var_c)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
-id: 1
+id: 14
 Exe Stack:
-closeRFile(var_f), print(var_c), readFile(var_f, var_c)
+print(v);
+v=v + 1
 Symbol Table:
-{var_f=1, var_c=15}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-closeRFile(var_f), print(var_c)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1
 Symbol Table:
-{var_f=1, var_c=50}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
-id: 1
+id: 14
 Exe Stack:
-closeRFile(var_f), print(var_c)
+print(v);
+v=v + 1
 Symbol Table:
-{var_f=1, var_c=50}
+{v=0}
 Out:
-[15]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
 id: 1
 Exe Stack:
-closeRFile(var_f)
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
 Symbol Table:
-{var_f=1, var_c=50}
+{v=1}
 Out:
-[15, 50]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
 Heap:
 {}
 
-id: 1
+id: 14
 Exe Stack:
-closeRFile(var_f)
+v=v + 1, print(v)
 Symbol Table:
-{var_f=1, var_c=50}
+{v=0}
 Out:
-[15, 50]
+[]
 File Table:
-{1=(test.in, java.io.BufferedReader@19c84052)}
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
+Symbol Table:
+{v=1}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 14
+Exe Stack:
+v=v + 1, print(v)
+Symbol Table:
+{v=0}
+Out:
+[]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, fork(print(v);
+v=v + 1);
+v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 14
+Exe Stack:
+v=v + 1
+Symbol Table:
+{v=0}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, fork(print(v);
+v=v + 1);
+v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 14
+Exe Stack:
+v=v + 1
+Symbol Table:
+{v=0}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1, fork(print(v);
+v=v + 1)
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 14
+Exe Stack:
+
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1, fork(print(v);
+v=v + 1)
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 15
+Exe Stack:
+print(v);
+v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 15
+Exe Stack:
+print(v);
+v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
+Symbol Table:
+{v=2}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 15
+Exe Stack:
+v=v + 1, print(v)
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
+Symbol Table:
+{v=2}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 15
+Exe Stack:
+v=v + 1, print(v)
+Symbol Table:
+{v=1}
+Out:
+[0]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, fork(print(v);
+v=v + 1);
+v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 15
+Exe Stack:
+v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, fork(print(v);
+v=v + 1);
+v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 15
+Exe Stack:
+v=v + 1
+Symbol Table:
+{v=1}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1, fork(print(v);
+v=v + 1)
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 15
+Exe Stack:
+
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1, fork(print(v);
+v=v + 1)
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 16
+Exe Stack:
+print(v);
+v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }, v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 16
+Exe Stack:
+print(v);
+v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
+Symbol Table:
+{v=3}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 16
+Exe Stack:
+v=v + 1, print(v)
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10), while(v<3){ fork(print(v);
+v=v + 1);
+v=v + 1 }
+Symbol Table:
+{v=3}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 16
+Exe Stack:
+v=v + 1, print(v)
+Symbol Table:
+{v=2}
+Out:
+[0, 1]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10)
+Symbol Table:
+{v=3}
+Out:
+[0, 1, 2]
+File Table:
+{}
+Heap:
+{}
+
+id: 16
+Exe Stack:
+v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1, 2]
+File Table:
+{}
+Heap:
+{}
+
+id: 1
+Exe Stack:
+print(v * 10)
+Symbol Table:
+{v=3}
+Out:
+[0, 1, 2]
+File Table:
+{}
+Heap:
+{}
+
+id: 16
+Exe Stack:
+v=v + 1
+Symbol Table:
+{v=2}
+Out:
+[0, 1, 2]
+File Table:
+{}
 Heap:
 {}
 
@@ -278,9 +809,21 @@ id: 1
 Exe Stack:
 
 Symbol Table:
-{var_f=1, var_c=50}
+{v=3}
 Out:
-[15, 50]
+[0, 1, 2, 30]
+File Table:
+{}
+Heap:
+{}
+
+id: 16
+Exe Stack:
+
+Symbol Table:
+{v=3}
+Out:
+[0, 1, 2, 30]
 File Table:
 {}
 Heap:

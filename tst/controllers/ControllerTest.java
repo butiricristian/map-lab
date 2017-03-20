@@ -30,6 +30,7 @@ public class ControllerTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 prg1);
         prgRepo1.addProgram(prgState1);
         ctrl1.oneStepForAllPrg((List)prgRepo1.getPrgList());
@@ -47,6 +48,7 @@ public class ControllerTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 prg1);
         prgRepo1.addProgram(prgState1);
         ctrl1.executeAllSteps();

@@ -21,6 +21,7 @@ public class ReadFileTest {
                 new MyList<>(new ArrayList<>()),
                 new MyFileTable(new HashMap<>()),
                 new MyHeap(new HashMap<>()),
+                new LockTable(new Hashtable<>()),
                 read);
         while(!prg.getExeStack().isEmpty()) {
             IStatement res = prg.getExeStack().pop();
